@@ -177,12 +177,16 @@ This starter code can also be found in `starter/part_1/index.html`.
 
 ### Mild
 
-- Update this list to reflect your top 10 songs. Change the cards to display your favorite songs along with their artists. Make sure to update the cover art as well.
+- Update this list to reflect *your* top 10 songs - you can even switch to a different medium like movies, shows, or tropical fish if you like. Change the cards to display your favorite songs along with their artists. 
+- Update the cover art for each of the songs.
+- Add at least three more songs! You can do even more if you have more songs to add. 
 
 ### Medium
 
 - Try revising the card layout of your Top 10 Page. Instead of a row with three columns, organize your cards into five rows of two columns, or a pyramid shape.
+- On Bulma's documentation, look up at least three components we haven't used yet. Pick the one that seems the most interesting to try to add it in to your site.
 
 ### Spicy
 
-- Add at least one new Bulma component to your layout.
+- Bulma doesn't have a ton of built-in colors. Modify the colors to match the vibe you want to create with your top 10 list. 
+- Right now, each song is just a single tile. Consider making a separate `.html` page for each of your top 2-5 songs, and then put a link to each on your main page. 
