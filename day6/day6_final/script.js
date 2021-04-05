@@ -19,5 +19,18 @@ console.log(imageHolderDiv);
 submitButton.addEventListener("click", (e) => {
   let myKey = 'YOUR_API_KEY_HERE';
   let topic = queryField.value;
-  console.log(topic);
+  let myQuery = `https://api.giphy.com/v1/gifs/search?api_key=${myKey}&q=${topic}+kitten`;
+  console.log(myQuery);
+  fetch(myQuery)
+    .then(response => response.json()) // read JSON response
+    .then(myjson => {
+      // code to execute once JSON response is available
+      let i = getRandom(10);
+      let imgurl = myjson.data[i].images.downsized.url;
+      console.log(imgurl);
+      imageHolderDiv.innerHTML = `<img src="${imgurl}"/>` + imageHolderDiv.innerHTML
+    })
+    .catch(error => {
+      console.log(error); // Log error if there is one
+    })
 })
