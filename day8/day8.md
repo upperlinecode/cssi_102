@@ -1,4 +1,4 @@
-# Title of Project
+# Intro to Realtime Database Part. 1
 
 1. [Objectives](#objectives)
 2. [What We're Building](#what-were-building)
@@ -9,9 +9,11 @@
 
 ## Objectives
 
-- Students will ...
+- Students will initialize Firebase in a project directory.
+- Students will use the Firebase API to read data from a Realtime Database.
+- Students will interact with the DOM to render data onto their HTML page.
 
-**Key vocabulary: [[[TYPE VOCAB HERE]]]**
+**Key vocabulary: Firebase emulators, iteration, DOM (Document Object Model)**
 
 ## What We're Building
 
@@ -98,7 +100,7 @@ const renderMessageAsHtml = (message) => {
 }
 ```
 
-11. It is possible to render the message on the same page by using the DOM to hide the input field.
+11. It is possible to render the message on the same page by using the DOM to hide the input field. It is worth a brief explanation of the DOM to students to help them understand how we are able to use JS to interact with our HTML. 
 ```js
 const renderMessageAsHtml = (message) => {
     // Hide Input Form
