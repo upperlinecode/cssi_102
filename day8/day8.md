@@ -17,7 +17,7 @@
 
 ## What We're Building
 
-Over the next few days we'll be building a secret messaging app that we can use to communicate with friends. Today we'll focus on reading data from out database and render that data as HTML. We'll connect the Firebase project that we created yesterday to our `secretMessageApp` repository then use the Firebase API to retrieve data and make our page dynamic. 
+Over the next couple days we'll be building a secret messaging app that we can use to communicate with friends. Today we'll focus on reading data from out database and render that data as HTML. We'll connect the Firebase project that we created yesterday to our `secretMessageApp` repository then use the Firebase API to retrieve data and make our page dynamic. 
 
 ## Starting Code
 
@@ -122,6 +122,10 @@ const renderMessageAsHtml = (message) => {
     messageDiv.innerHTML = message;   
 }
 ```
+
+## Finished Code
+
+The finished code for today's code along can be found in the `day8_final` folder.
 
 ## Extensions for Independent Practice
 
