@@ -4,8 +4,7 @@
 2. [What We're Building](#what-were-building)
 3. [Starting Code](#starting-code)
 4. [Stepped Solution](#stepped-solution)
-5. [Finished Code](#finished-code)
-6. [Extensions for Independent Practice](#extensions-for-independent-practice)
+5. [Extensions for Independent Practice](#extensions-for-independent-practice)
 
 ## Objectives
 
