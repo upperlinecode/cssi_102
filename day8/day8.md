@@ -21,7 +21,7 @@ Over the next couple days we'll be building a secret messaging app that we can u
 
 ## Starting Code
 
-Starter code can be found in the `day8_starter` directory. 
+Starter code can be found in the `day8_starter` directory - moving forward, since the starter code for each lesson will be a full firebase application, with a slightly more complex hierarchy and many more individual files, these lessons will no long include code transcribed here. Please refer to the corresponding folders to download and / or distribute code to students. 
 
 ## Stepped Solution
 
