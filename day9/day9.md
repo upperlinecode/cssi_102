@@ -9,9 +9,11 @@
 
 ## Objectives
 
-- Students will ...
+- Students will use the DOM to capture user input.
+- Students will use the Firebase API to write data to their realtime database.
+- Students will use the Firebase console as the source of truth for database operations. 
 
-**Key vocabulary: [[[TYPE VOCAB HERE]]]**
+**Key vocabulary: event handler, write operation**
 
 ## What We're Building
 

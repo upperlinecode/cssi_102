@@ -106,7 +106,7 @@ const renderMessageAsHtml = (message) => {
     // Hide Input Form
     const passcodeInput = document.getElementById('passcodeInput');
     passcodeInput.style.display = 'none';
-    // Render messageas HTML
+    // Render message as HTML
 }
 ```
 
@@ -117,7 +117,7 @@ const renderMessageAsHtml = (message) => {
     // Hide Input Form
     const passcodeInput = document.getElementById('passcodeInput');
     passcodeInput.style.display = 'none';
-    // Render messageas HTML
+    // Render message as HTML
     const messageDiv = document.getElementById('message');
     messageDiv.innerHTML = message;   
 }
@@ -131,13 +131,14 @@ The finished code for today's code along can be found in the `day8_final` folder
 
 ### Mild
 
-- At least two mild challenges
-- At least two mild challenges
+- Allow users to enter another passcode to view another message. This will involve adding a button, and toggling the input field.
+- Second mild challenge
 
 ### Medium
 
-- At least one medium challenge
+- Return an error to the user if the passcode doesnt match any of the messages. 
 
 ### Spicy
 
-- At least one spicy challenge
+- Limit user to a certain number of attempts before blocking them from trying again.
+- If you were able to complete the previous challenge, try adding a time out feature that will allow the user to try entering the passcode again after a set amount of time has elapsed. 

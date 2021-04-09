@@ -229,14 +229,14 @@ The final code for today can be found in `day11/day11_final/firebaseNotes`.
 
 ### Mild
 
-- At least two mild challenges
-- At least two mild challenges
+- Add a `created` field to the database schema that contains a timestamp for when the note was saved to the database. 
+- Second mild extension
 
 ### Medium
 
-- At least one medium challenge
+- Add a `labels` field to your schema that stores an array of user generated labels. In your HTML add an additional field that allows users to add labels that categorize each note (ie: 'work', 'personal', 'CS tutorials', etc.).
 
 ### Spicy
 
-- At least one spicy challenge
+- Implement an additional sign-in flow. Allow users to choose to sign in via their Google account, or with a username and password. 
 

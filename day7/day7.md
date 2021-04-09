@@ -105,8 +105,8 @@ A single JSON node that represents our data will look like this. Let students kn
 
 ### Mild
 
-- At least two mild challenges
-- At least two mild challenges
+- Use the terminal and the commands you learned earlier to build an address book for your family and friends. Your address book should have an individual folder for at least five people. Within each folder you should have at least one `.txt` file.
+- Update the schema of your database. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
 
 ### Medium
 
