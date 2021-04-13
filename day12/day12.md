@@ -169,7 +169,7 @@ The finished code for today can be found in `day12/day12_final/firebaseNotes`.
 ### Mild
 
 - Add the user's display name or email address to each note card. 
-- second mild challenge
+- Update the `createCard()` function to give each card a random background color. 
 
 ### Medium
 - Try refactoring the code using different DOM methods, to dynamically build the Bulma Cards.

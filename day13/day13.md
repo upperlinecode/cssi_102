@@ -56,7 +56,7 @@ const editNote = (noteId) => {
 }
 ```
 
-6. In `viewNotes.htm` create a modal with a form:
+6. In `viewNotes.html` create a modal with a form:
 ```html
 <div id="editNoteModal" class="modal">
   <div class="modal-background"></div>
