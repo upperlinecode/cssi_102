@@ -7,7 +7,7 @@
 
 ## What We're Building
 
-Students should work together to build whatever they want - it is advisable to follow the protocols set forth in the [Project Mode](project_mode.md) guide with respect to ideation, but skip the more drawn out group formation pieces. Simply assign groups randomly and send students on their way.
+Students should work together to build whatever they want - it is advisable to follow the protocols set forth in the [Project Mode](../projectMode.md) guide with respect to ideation, but skip the more drawn out group formation pieces. Simply assign groups randomly and send students on their way.
 
 Note: Students will not likely use all topics covered so far in their projects - some may not even use JavaScript at all. That's okay! The goal of this project day is for students to feel proud of what they've built, and to deepen friendships with their project partners. There will be plenty of opportunities to dig deeper into JavaScript in the coming weeks. 
 
