@@ -43,7 +43,14 @@ git clone [repo url]
 
 7. Use the command line to a new file in that folder called `README.md`. Have students add some text to the README file and save it. 
 
-8. Back in the command line, type `git status`. Have students inspect the response. Solicit predictions on what the response from Git is telling us. Then clarify by walking them through the response. Explain that in red, Git is telling us that we have certain files that are not yet being tracked by Git. 
+8. Back in the command line, type `git status`. Have students inspect the response. Solicit predictions on what the response from Git is telling us. Then clarify by walking them through the response. Explain that in red, Git is telling us that we have certain files that are not yet being tracked by Git. Pause here to talk about *why* the process for mirroring our local changes on GitHub tend to be so tedious.
+      * Ask students how they save work on Google Docs. They'll explain that they don't; Google Docs autosaves.
+      * Tell students that Git is basically the opposite - not only does it not autosave, saving is in fact a **three-step process*
+   * Say: 
+      * We use `git add` to say *which* files to save.
+      * We use `git commit` to give a *name* to this save point.
+      * And finally, we use `git push` to say *where* we want to store this save. 
+   * Finally, ask students why this more tedious process for saving our work might be BETTER than autosaving when we're writing code. They can generally come up with pretty wonderful answers, but one compelling one is that code is generally broken while we're working on it, so we may only want to save working (or mostly working) versions.
 
 9. Since Git is a version control system, it needs to know what it should be keeping track of and what it shouldn't be. We want to include this file in our project, so let's add this file to be tracked in our project with `git add README.md`. Then type `git status` again.
 
