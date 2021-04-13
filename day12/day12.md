@@ -174,7 +174,6 @@ The finished code for today can be found in `day12/day12_final/firebaseNotes`.
 ### Medium
 - Try refactoring the code using different DOM methods, to dynamically build the Bulma Cards.
 
-
 ### Spicy
 
 - Add a `labels` field to your schema that stores an array of user generated labels. In your HTML add an additional field that allows users to add labels that categorize each note (ie: 'work', 'personal', 'CS tutorials', etc.). Allow users to search for notes by label. 

@@ -110,8 +110,8 @@ A single JSON node that represents our data will look like this. Let students kn
 
 ### Medium
 
-- At least one medium challenge
+- Create at least 10 unique records in your realtime database. This will give you a head start for tomorrow, as you will be reading data from your realtime database.
 
 ### Spicy
 
-- At least one spicy challenge
+- Create a second realtime database to store data about whatever you'd like: movies, books, sports teams, etc. 

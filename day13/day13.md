@@ -127,7 +127,7 @@ const handleSaveEdit = (noteId) => {
 }
 ```
 
-11. After submitting edits we'll want to close the modal.Explain to students that it's possible and perfectly valid to define this logic in the `handleSaveEdit()` function. However for the sake of reusability, it is worth defining it as a seperate function. Defining it as it's own function allows us to call it in `handleSaveEdit()` and also trigger it as an event handler when we click the cancel button. 
+11. After submitting edits we'll want to close the modal. Explain to students that it's possible and perfectly valid to define this logic in the `handleSaveEdit()` function. However for the sake of reusability, it is worth defining it as a seperate function. Defining it as it's own function allows us to call it in `handleSaveEdit()` and also trigger it as an event handler when we click the cancel button. 
 ```js
 const closeEditModal = () => {
   const editNoteModal = document.getElementById('editNoteModal');
@@ -157,14 +157,14 @@ The finished code for today can be found in `day13/day13_final/firebaseNotes`.
 
 ### Mild
 
-- 
-- 
+- Go into your Firebase records to manually add records to confirm your ability to update and delete to the realtime database. 
+- Before displaying notes, sort them by alphabetical order.
 
 ### Medium
 
-- 
+- If user chooses to delete a note, render an alert or pop-up that confirms if they are sure they want to delete the note.
 
 ### Spicy
 
-- 
+- Add the functionality to archive notes that users can reference at later points. 
 
