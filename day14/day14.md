@@ -129,13 +129,15 @@ different than the remote `master` branch.
 
 ### Mild
 
-- At least two mild challenges
-- At least two mild challenges
+- Create a new HTML file called `index.html` and add it to staging via `git add
+index.html`
+- Create a new directory called `projects` and commit the folder.
 
 ### Medium
 
-- At least one medium challenge
+- Create and resolve a new merge conflict.
 
 ### Spicy
 
-- At least one spicy challenge
+- Reference documentation to figure out how to reset your project to the master branch.
+- Reference documentation to figure out how to reset your project to a previous commit. 

@@ -132,7 +132,7 @@ The finished code for today's code along can be found in the `day8_final` folder
 ### Mild
 
 - Allow users to enter another passcode to view another message. This will involve adding a button, and toggling the input field.
-- Second mild challenge
+- Render the message as a different bulma component, like a card or a modal.
 
 ### Medium
 

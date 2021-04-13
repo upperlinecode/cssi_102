@@ -14,10 +14,9 @@
 - Students will use `for...in` loops to iterate over user generated data.
 - Students will use the DOM to render data as formatted HTML.
 
-**Key vocabulary: [[[TYPE VOCAB HERE]]]**
+**Key vocabulary: iteration, JSON, API, window, DOM**
 
 ## What We're Building
-
 Today students will continue building out their notes app. We'll focus on reading data and rendering a list of data as HTML. 
 
 ## Starting Code
@@ -173,7 +172,7 @@ The finished code for today can be found in `day12/day12_final/firebaseNotes`.
 - second mild challenge
 
 ### Medium
-
+- Try refactoring the code using different DOM methods, to dynamically build the Bulma Cards.
 
 
 ### Spicy

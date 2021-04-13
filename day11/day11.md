@@ -230,7 +230,7 @@ The final code for today can be found in `day11/day11_final/firebaseNotes`.
 ### Mild
 
 - Add a `created` field to the database schema that contains a timestamp for when the note was saved to the database. 
-- Second mild extension
+- Add a welcome message to individually greet your user once they've logged in. 
 
 ### Medium
 

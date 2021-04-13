@@ -72,13 +72,13 @@ The finished code for today's code along can be found in the `day9_final` folder
 
 ### Mild
 
-- At least two mild challenges
-- At least two mild challenges
+- Limit the number of characters that a message can be.
+- Render an alert or warning message if a user attempts to create a message longer than the character limit. 
 
 ### Medium
 
-- At least one medium challenge
+- Set restrictions for the user generated password. For example, the password must contain at least one capital letter and one number.
 
 ### Spicy
 
-- At least one spicy challenge
+- Write logic to randomly generate a unique key. Use this to identify each data node, instead of the automatically generated Firebase key. 
