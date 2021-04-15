@@ -15,6 +15,30 @@ Share the following links with students, to give them a idea of the scope of pro
 * <a href="https://hawaii-travel-site.glitch.me/">Hawai'i Travel Site</a>
 * <a href="https://tokyo-travel-page.glitch.me/">Tokyo Trip Builder</a>
 
+## Pushing Projects to Github
+
+Students will be using Git Github later in the course to collaborate on their final project. To begin familiarizing them with Git and version control, it is a good idea to begin encouraging them to use it to backup their work. Encourage them to follow this workflow whenever the want to store their work, but particularly on project days.
+
+1. Students should log into their Github account. If they don't have one yet, give them a few moments to register an account.
+
+2. From their Github profile, they should click the "Repositories" tab, then "New".
+
+3. Give students a moment to step through naming and creating a repository. They can enter a brief description or write a more detailed README later.
+
+4. In the command line, students should initialize Git in their repository. Initializing Git creates a `.git` file in their repo. Though the `.git` file is typically hidden from us, unless we type a special `ls` command to view it, students should be aware that it is there, and it contains all of the information about their repositories history, making version control possible.
+First they'll want  to make sure they are in their project directory, then type `git init`.
+
+5. Students can type `git status` to confirm that Git is initialized in their repository and has awareness of all its contents.
+
+6. Though Git is aware of thes files, it doesn't yet know to keep track of them and save changes when they occur. Saving in Git is a three step process, and much more intentional than the "command + S" students might be familiar with to save in Google Docs or Cloud Shell. 
+
+7. The first step in publishing changes is adding all of our files to a local staging area. Though Git is aware of thes files, it doesn't yet know to keep track of them. We must explicitly tell Git to track the files. As students are working locally they can track their incremental progress by using `git add <filename>` to store the changes for an eventual commit. They can replace `<filename>` with `.` to add all of the files. 
+Typing `git status` again will update them with which files have now been staged for commit.
+
+8. When students are happy with their changes and would like to capture them and save them, they can commit them.  Encourage students to think of committing to Git as creating snapshots in the chronology of a Git project. These snapshots capture some milestone or meaningful change in the project. Have students enter the command `git commit -m <message>` where `<message>` is a brief summary of the changes they've made to their project. Have students type `git status` again. They should now see that their working tree is clean, all changes they've made locally have been tracked and saved. 
+
+9. They have now saved their changes but only locally. To make their remote repository aware of the updates they've made locally, they must push these changes to their remote repository on Github. The command `git push origin master` will send these local changes to the remote repository hosted on Github. Have students refresh their Github repository to verify that their changes have been synced to their remote repository.
+
 ## Notes on Friday
 
 Fridays, especially the first and second Fridays of the course, are intentionally designed with no new content. These "flex days" are critical for student success - the extra time spent without the addition of new material allows them to deepen their understanding by shifting from cognitive to autonomous performance. 
