@@ -31,15 +31,15 @@ Students will be using Git Github later in the course to collaborate on their fi
 
 2. From their Github profile, they should click the "Repositories" tab, then "New".
 
-3. Give students a moment to step through naming and creating a repository. They can enter a brief description or write a more detailed README later.
+3. Give students a moment to step through naming and creating a repository. Since this workflow is going to commit an EXISTING project, it's important that the "Intialize repository with a Readme" box is **deselected** (otherwise our push will be refused later). 
 
-4. In the command line, students should initialize Git in their repository. Initializing Git creates a `.git` file in their repo. Though the `.git` file is typically hidden from us, unless we type a special `ls` command to view it, students should be aware that it is there, and it contains all of the information about their repositories history, making version control possible. First they'll want to make sure they are in their project directory, then type `git init`.
+4. In the command line, students should initialize a Git repository (or repo) for this project. Initializing a Git repo creates a `.git` file in the project. Though the `.git` file is typically hidden from us, unless we type a special `ls` command to view it, students should be aware that it is there, and it contains all of the information about their repository's history, making version control possible. First they'll want to make sure they are in their project directory, then type `git init`.
     * Please note that if students are working in Glitch, the command line / terminal can be accessed by clicking the "tools" button. 
     * If you are using another environment, you'll want to take a moment before teaching this lesson to confirm that it has a terminal, and that projects can be pushed from that terminal.
 
-5. Students can type `git status` to confirm that Git is initialized in their repository and has awareness of all its contents.
+5. Students can type `git status` to confirm that a Git repo has been initialized and has awareness of all its contents.
 
-6. Though Git is aware of thes files, it doesn't yet know to keep track of them and save changes when they occur. Saving in Git is a three step process, and much more intentional than the "command + S" students might be familiar with to save in Google Docs or Cloud Shell. 
+6. Though Git is aware of thes files, it doesn't yet know to keep track of them and save changes when they occur. Saving in Git is a three step process, and much more intentional than the "command + S" students might be familiar with to save in Google Docs or Cloud Shell. Pause and ask students why they think a more tedious process where you have to indicate WHICH files to save, NAME that save, and then say WHERE to save them might be better when we're writing code?
 
 7. The first step in publishing changes is adding all of our files to a local staging area. Though Git is aware of thes files, it doesn't yet know to keep track of them. We must explicitly tell Git to track the files. As students are working locally they can track their incremental progress by using `git add <filename>` to store the changes for an eventual commit. They can replace `<filename>` with `.` to add all of the files. 
 Typing `git status` again will update them with which files have now been staged for commit.
