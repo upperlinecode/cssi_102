@@ -25,7 +25,13 @@ The purpose of this lesson is to build repository to demonstrate Git and Github 
 
 ## Stepped Solution
 
+NOTE: Depending on where your students are at, what styles of collaboration they have naturally gravitated towards, and how ready they appear to be to learn new material, you may wish to teach only the most relevant sections listed below. If students are successfully sharing code through another medium (like Glitch), then branching and merging may not be necessary, and could be offered only to the students who indicate they're eager to learn a more challenging (but more authentic) workflow.
+
+Please teach only as much of this content as your students need. 
+
 ### Cloning a repository
+
+Depending on how you've distributed code to students up until this point, it's possible that they might already deeply understand the `git clone` command. If that's the case, feel free to skip to the next section. 
 
 1.  Spend a few minutes explaining distributed version control to students. Make sure they have a basic grasp of the concept before moving on. 
 
@@ -45,7 +51,7 @@ git clone [repo url]
 
 7. Use the command line to a new file in that folder called `README.md`. Have students add some text to the README file and save it. 
 
-### Commit to a local repository
+### Commit to a repository
 
 8. Back in the command line, type `git status`. Have students inspect the response. Solicit predictions on what the response from Git is telling us. Then clarify by walking them through the response. Explain that in red, Git is telling us that we have certain files that are not yet being tracked by Git. Pause here to talk about *why* the process for mirroring our local changes on GitHub tend to be so tedious.
       * Ask students how they save work on Google Docs. They'll explain that they don't; Google Docs autosaves.
