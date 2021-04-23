@@ -39,10 +39,6 @@ Starter code can be found in the `day8_starter` directory - moving forward, sinc
 <!-- include only the Firebase features as you need -->
 <script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
 <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
-<!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
 <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 ```
 
@@ -81,7 +77,7 @@ const getMessages = () => {
 9. Use the DOM to capture the value of the input field. Use a `for...in` loop to iterate over the returned JSON, and search for the message that match the secret passcode. Remind students that they may have used iteration with arrarys with `for` loops, and that `for...in` loops are similar, but meant to be used with objects.
 ```js
 const findMessage = (messages) => {
-    const passcodeAttempt = document.getElementById('passcode').value;
+    const passcodeAttempt = document.querySelector('#passcode').value;
     for(message in messages) {
         const messageData = messages[message];
         if(messageData.passcode === passcodeAttempt) {
@@ -104,7 +100,7 @@ const renderMessageAsHtml = (message) => {
 ```js
 const renderMessageAsHtml = (message) => {
     // Hide Input Form
-    const passcodeInput = document.getElementById('passcodeInput');
+    const passcodeInput = document.querySelector('#passcodeInput');
     passcodeInput.style.display = 'none';
     // Render message as HTML
 }
@@ -115,10 +111,10 @@ const renderMessageAsHtml = (message) => {
 const renderMessageAsHtml = (message) => {
     console.log(message)
     // Hide Input Form
-    const passcodeInput = document.getElementById('passcodeInput');
+    const passcodeInput = document.querySelector('#passcodeInput');
     passcodeInput.style.display = 'none';
     // Render message as HTML
-    const messageDiv = document.getElementById('message');
+    const messageDiv = document.querySelector('#message');
     messageDiv.innerHTML = message;   
 }
 ```

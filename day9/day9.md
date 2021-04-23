@@ -46,16 +46,16 @@ const submitMessage = () => {
 5. We'll be using the DOM again to capture input from our form. Probe students for understanding of the DOM, before writing out the code. 
 ```js
 const submitMessage = () => {
-  const passcodeInput = document.getElementById('passcode').value;
-  const messageInput = document.getElementById('message').value;
+  const passcodeInput = document.querySelector('#passcode').value;
+  const messageInput = document.querySelector('#message').value;
 }
 ```
 
 6. Use the Firebase API to push our data to the realtime database. Have students navigate to the Firebase console to confirm that their data was successfully added. Point out that by using the Firebase API, unique keys are automatically generated for us.
 ```js
 const submitMessage = () => {
-    const passcodeInput = document.getElementById('passcode').value;
-    const messageInput = document.getElementById('message').value;
+    const passcodeInput = document.querySelector('#passcode').value;
+    const messageInput = document.querySelector('#message').value;
     
     firebase.database().ref().push({
         passcode: passcodeInput,

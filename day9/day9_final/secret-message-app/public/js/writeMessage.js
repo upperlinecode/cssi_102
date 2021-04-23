@@ -1,6 +1,6 @@
 const submitMessage = () => {
-    const passcodeInput = document.getElementById('passcode').value;
-    const messageInput = document.getElementById('message').value;
+    const passcodeInput = document.querySelector('#passcode').value;
+    const messageInput = document.querySelector('#message').value;
     
     firebase.database().ref().push({
         passcode: passcodeInput,
