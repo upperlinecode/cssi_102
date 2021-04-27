@@ -25,14 +25,18 @@ The starter code for today can be found in `day12/day12_starter/firebaseNotes`.
 
 ## Stepped Solution
 
-1.  Today most of the code will be written in `viewNotes.js`. Once again, it's a good idea to check the authentication state of the user before proceeding with the logic to read from a database. Start by adding a `window.onload` event:
+1. Share the link to the <a href="https://to-do-list-2a702.web.app/">final project</a> with students. Ask students to look at the app once again, but to think more intentionally about what features they would need to build in order to allow users to view they notes they created. Challenge them to think about *how* they would implement these features in terms of Javascript logic. What challenges might they need to overcome in order to incorporate this functionality? Clarify that adding the ability to view notes can be broken down into two major steps: 
+    - Reading the notes data from the Realtime Database
+    - Dynamically rendering the notes as HTML
+
+2.  Today most of the code will be written in `viewNotes.js`. Once again, it's a good idea to check the authentication state of the user before proceeding with the logic to read from a database. Start by adding a `window.onload` event:
 ```js
 window.onload = event => {
 
 }
 ```
 
-2. Challenge students to see if they can recall the steps to validate a user's authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
+3. Challenge students to see if they can recall the steps to validate a user's authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
 ```js
   // Use this to retain user state between html pages.
   firebase.auth().onAuthStateChanged(function(user) {
@@ -46,19 +50,19 @@ window.onload = event => {
   });
 ```
 
-3. After verifying that our user is logged in, it's a good idea to store their id, so that we can later query for their data.Yesterday we retrieved the user's ID from the user object that was returned to us after the user logged in. Today we'll do the same thing, and store that user ID in a variable: `googleUserId`. Add this line at the end of the `if` block:
+4. After verifying that our user is logged in, it's a good idea to store their id, so that we can later query for their data.Yesterday we retrieved the user's ID from the user object that was returned to us after the user logged in. Today we'll do the same thing, and store that user ID in a variable: `googleUserId`. Add this line at the end of the `if` block:
 ```js
 const googleUserId = user.uid;
 ```
 
-4. We need to add the functionality to retrieve the notes from the database. In order to look up a specific users notes, it's necessary to take in the user's ID, which can be passed in as a parameter.
+5. We need to add the functionality to retrieve the notes from the database. In order to look up a specific users notes, it's necessary to take in the user's ID, which can be passed in as a parameter.
 ```js
 const getNotes = (userId) => {
 
 }
 ```
 
-5. Back in our `window.onload` event, call the `getNotes` function so that it will trigger after a user has been validated. Pass the user's ID into the function call so that it can be appended the query url.  At this point our `window.onload` event should look like this:
+6. Back in our `window.onload` event, call the `getNotes` function so that it will trigger after a user has been validated. Pass the user's ID into the function call so that it can be appended the query url.  At this point our `window.onload` event should look like this:
 ```js
 window.onload = (event) => {
   // Use this to retain user state between html pages.
@@ -74,12 +78,12 @@ window.onload = (event) => {
 };
 ```
 
-6. Inside the `getNotes(userId)` function definition, start by connecting to the database and routing to the individual user's database resource. Remind students that we used this path yesterday to write data to the Realtime Database. Instead of passing in the variable `userId`, we passed in `googleUser.uid`, but both variables point to the same data: the logged in user's unique id. Today we'll be referencing that same endpoint to retrieve our stored data.
+7. Inside the `getNotes(userId)` function definition, start by connecting to the database and routing to the individual user's database resource. Remind students that we used this path yesterday to write data to the Realtime Database. Instead of passing in the variable `userId`, we passed in `googleUser.uid`, but both variables point to the same data: the logged in user's unique id. Today we'll be referencing that same endpoint to retrieve our stored data.
 ```js
   const notesRef = firebase.database().ref(`users/${userId}`);
 ```
 
-7. Read from the database and store the data that is returned in a variable:
+8. Read from the database and store the data that is returned in a variable:
 
 ```js
 notesRef.on('value', (snapshot) => {
@@ -87,7 +91,7 @@ notesRef.on('value', (snapshot) => {
 });
 ```
 
-8. At this point the `getNotes(userId)` function should look like this:
+9. At this point the `getNotes(userId)` function should look like this:
 
 ```js
 const getNotes = () => {
@@ -98,7 +102,7 @@ const getNotes = () => {
 }
 ```
 
-9. To add the functionality to render the data as HTML, start by adding a function `renderDataAsHtml()` that will loop over the notes, create a card, and render it onto the `viewNotes.html` HTML page.
+10. To add the functionality to render the data as HTML, start by adding a function `renderDataAsHtml()` that will loop over the notes, create a card, and render it onto the `viewNotes.html` HTML page.
 
 ```js
 const renderDataAsHtml = data => {
@@ -106,7 +110,7 @@ const renderDataAsHtml = data => {
 };
 ```
 
-10. Explain to students that there are multiple ways to dynamically create HTML using the DOM. The simplest way to do this, for now, is to create a large string of HTML that we can inject into the DOM.
+11. Explain to students that there are multiple ways to dynamically create HTML using the DOM. The simplest way to do this, for now, is to create a large string of HTML that we can inject into the DOM.
 ```js
 const renderDataAsHtml = data => {
   let cards = ``;
@@ -114,7 +118,7 @@ const renderDataAsHtml = data => {
 };
 ```
 
-11. Because we are dealing with objects, it's not possible to iterate over them in exactly the same way we might an array. We have to use a `for...in` loop. 
+12. Because we are dealing with objects, it's not possible to iterate over them in exactly the same way we might an array. We have to use a `for...in` loop. 
 ```js
 const renderDataAsHtml = data => {
   let cards = ``;
@@ -125,7 +129,7 @@ const renderDataAsHtml = data => {
 };
 ```
 
-12. It's time to add some code that will create an HTML card. Explain to students that it is perfectly valid to do that inside of the `renderDataAsHtml()` function,but for the sake of readability and seperating concerns, it's best practice to keep code as modular as possible. Create a new function that just recieves data, formats it as HTML, and returns it. Then this function can be called from inside `renderDataAsHtml()`. After writing out the first few sub-strings, try to solicit students help in compiling the HTML string needed to build a card. 
+13. It's time to add some code that will create an HTML card. Explain to students that it is perfectly valid to do that inside of the `renderDataAsHtml()` function,but for the sake of readability and seperating concerns, it's best practice to keep code as modular as possible. Create a new function that just recieves data, formats it as HTML, and returns it. Then this function can be called from inside `renderDataAsHtml()`. After writing out the first few sub-strings, try to solicit students help in compiling the HTML string needed to build a card. 
 ```js
 const createCard = (note) => {
   let innerHTML = "";
@@ -147,7 +151,7 @@ const createCard = (note) => {
 }
 ```
 
-13. Now that the logic is written to create a card, call this function from inside `renderDataAsHtml()`. Make sure students understand that every time this function iterates over a new piece of data, the `createCard()` function will format that data as an HTML string. This string is then concatenated onto the cards variable, appended to the `viewNotes.html` page.
+14. Now that the logic is written to create a card, call this function from inside `renderDataAsHtml()`. Make sure students understand that every time this function iterates over a new piece of data, the `createCard()` function will format that data as an HTML string. This string is then concatenated onto the cards variable, appended to the `viewNotes.html` page.
 ```js
 const renderDataAsHtml = data => {
   let cards = ``;

@@ -24,31 +24,33 @@ The starter code for today can be found in `day13/day13_starter/firebaseNotes`.
 
 ## Stepped Solution
 
-1. In `viewNotes.js`, update the `createCard()` function to accept both a note and the noteID.
+1. By now students have built a web app that has the basic functionality of authentication, writing to and reading from a database. To complete the user experience, though, students will also want to equip users with the ability to modify or delete data that they have generated.  Share the link to the <a href="https://to-do-list-2a702.web.app/">final project</a> with students once more. Ask them to think more intentionally about what remaining features should we add to complete our app and deliver a more intuitive user experience. Clarify that in addition to reading and writing data, updating and deleting data are essential behaviors that most web apps are expected to have. Based on what they have learned so far about the Firebase API, ask them how they think we might implement this functionality.
 
-2. Update the footer of the cards to add a delete button that has an event handler. 
+2. In `viewNotes.js`, update the `createCard()` function to accept both a note and the noteID.
+
+3. Update the footer of the cards to add a delete button that has an event handler. 
 ```js
 innerHTML +=  `<a id="${noteId}" href="#" class="card-footer-item" onclick="deleteNote(this.id)">Delete</a>`
 ```
 
-3. Write the shell of the function to delete a note.
+4. Write the shell of the function to delete a note.
 ```js
 const deleteNote = (noteId) => {
 
 }
 ```
 
-4. Deleting a note in Firebase RTDB is simple. Just reference that record in the database and call `.remove()` on it. The first part of the path, `users/${googleUserId}`, should be familiar to students by now. We've used this path on day 11 and 13 to write data to our endpoint, and retrieve data from that same endpoint. Referencing this endpoint will return to us **all** of the notes that were created by a user. To access a specific note created by the user, we'll just append the note's unique key to the path. Add this code inside the `deleteNote()` function:
+5. Deleting a note in Firebase RTDB is simple. Just reference that record in the database and call `.remove()` on it. The first part of the path, `users/${googleUserId}`, should be familiar to students by now. We've used this path on day 11 and 13 to write data to our endpoint, and retrieve data from that same endpoint. Referencing this endpoint will return to us **all** of the notes that were created by a user. To access a specific note created by the user, we'll just append the note's unique key to the path. Add this code inside the `deleteNote()` function:
 ```js
 firebase.database().ref(`users/${googleUserId}/${noteId}`).remove();
 ```
 
-5. To update a note, add an edit button to the card footer and add an `onclick` handler, much like the delete button.
+6. To update a note, add an edit button to the card footer and add an `onclick` handler, much like the delete button.
 ```js
 innerHTML +=  `<a id="${noteId}" class="card-footer-item" onclick="editNote(this.id)">Edit</a>`
 ```
 
-6. Add an `editNote()` function:
+7. Add an `editNote()` function:
 ```js
 const editNote = (noteId) => {
   let note = document.getElementById(noteId);
@@ -56,7 +58,7 @@ const editNote = (noteId) => {
 }
 ```
 
-7. In `viewNotes.html` create a modal with a form:
+8. In `viewNotes.html` create a modal with a form:
 ```html
 <div id="editNoteModal" class="modal">
   <div class="modal-background"></div>
@@ -73,7 +75,7 @@ const editNote = (noteId) => {
 </div>
 ```
 
-8. For an optimal user experience, it's a good idea to have the text populate the form so that users can easily make their edits. Write out the logic to toggle modal open and populate with note content. 
+9. For an optimal user experience, it's a good idea to have the text populate the form so that users can easily make their edits. Write out the logic to toggle modal open and populate with note content. 
 ```js
 const editNote = (noteId) => {
   const editNoteModal = document.querySelector('#editNoteModal');
@@ -89,14 +91,14 @@ const editNote = (noteId) => {
 };
 ```
 
-9. Add functionality to push edits to the realtime database. Add code to dynamically handle clicking the Save Changes button on the modal. 
+10. Add functionality to push edits to the realtime database. Add code to dynamically handle clicking the Save Changes button on the modal. 
 
 ```js
   const saveEditBtn = document.querySelector('#saveEdit');
   saveEditBtn.onclick = handleSaveEdit.bind(this, noteId);
 ```
 
-10. The edit `editNote()` function should now look like this:
+11. The edit `editNote()` function should now look like this:
 ```js
 const editNote = (noteId) => {
   const editNoteModal = document.querySelector('#editNoteModal');
@@ -114,7 +116,7 @@ const editNote = (noteId) => {
 };
 ```
 
-11. Write the logic to persist the edit to the database.
+12. Write the logic to persist the edit to the database.
 ```js
 const handleSaveEdit = (noteId) => {
   const noteTitle = document.querySelector('#editTitleInput').value;
@@ -127,7 +129,7 @@ const handleSaveEdit = (noteId) => {
 }
 ```
 
-12. After submitting edits we'll want to close the modal. Explain to students that it's possible and perfectly valid to define this logic in the `handleSaveEdit()` function. However for the sake of reusability, it is worth defining it as a seperate function. Defining it as it's own function allows us to call it in `handleSaveEdit()` and also trigger it as an event handler when we click the cancel button. 
+13. After submitting edits we'll want to close the modal. Explain to students that it's possible and perfectly valid to define this logic in the `handleSaveEdit()` function. However for the sake of reusability, it is worth defining it as a seperate function. Defining it as it's own function allows us to call it in `handleSaveEdit()` and also trigger it as an event handler when we click the cancel button. 
 ```js
 const closeEditModal = () => {
   const editNoteModal = document.querySelector('#editNoteModal');
@@ -135,7 +137,7 @@ const closeEditModal = () => {
 };
 ```
 
-13. The updated `handleSaveEdit()` function should look like this:
+14. The updated `handleSaveEdit()` function should look like this:
 ```js
 // Updated handleSaveEdit 
 const handleSaveEdit = (noteId) => {

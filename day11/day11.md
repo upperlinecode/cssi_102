@@ -26,11 +26,18 @@ The starting code for today can be found in `day11/day11_start/firebaseNotes`.
 
 ## Stepped Solution
 
-1.  Have students create a new project in the Firebase console and initialize Firebase in their `firebaseNotes` repository. Challenge students to complete these steps on their own, and support them as they navigate the steps.
+1.  Share the link to the <a href="https://to-do-list-2a702.web.app/">final project</a> with students. Give them some time to navigate through the app and test out its features. Ask students to identify the core functionality of the app and think specifically about what we would need to build to implement this functionality. Be sure to name that in addition to a user facing front-end, the key features that we'll need to build are:
+    - An authentication flow
+    - A database to store user-generated data
+    - The ability to retreive data from our database, manipulate it, and return output to the user
+    - A means of updating and deleting data.
+Let student's know that we'll be tackling these items over the next three days, starting with implementing the ability to sign-in users and generate new data in our database.
 
-2. In order for Firebase Authentication to work, students will need to enable Google Sign-In in the Firebase console (Authentication > Sign-In Method > Enable Google Sign-In).
+2. Have students create a new project in the Firebase console and initialize Firebase in their `firebaseNotes` repository. Challenge students to complete these steps on their own, and support them as they navigate the steps.
 
-3. Students should run the following commands in their terminal.
+3. In order for Firebase Authentication to work, students will need to enable Google Sign-In in the Firebase console (Authentication > Sign-In Method > Enable Google Sign-In).
+
+4. Students should run the following commands in their terminal.
 ```bash
 $ npm install -g firebase-tools
 $ firebase login
@@ -39,18 +46,18 @@ $ firebase init
 
 After initializing Firebase, have students check that it is working by running `firebase emulators:start`. The terminal will return links to view your app, and also links to view your running emulators. Students should open these links. 
 
-4. Check for understanding by having students walk you through confirming that their Javascript `signIn.js` file is properly linked to their `index.html`.
+5. Check for understanding by having students walk you through confirming that their Javascript `signIn.js` file is properly linked to their `index.html`.
 
-5. In `signIn.js` write the shell of a `signIn()` function. Have students check that everything is linked together and working by adding a `console.log()` statement. 
+6. In `signIn.js` write the shell of a `signIn()` function. Have students check that everything is linked together and working by adding a `console.log()` statement. 
 
-6. Check for understanding by having students share out how we can attach an event handler to an HTML element. Have students add an `onclick()` handler to the Sign-In button.
+7. Check for understanding by having students share out how we can attach an event handler to an HTML element. Have students add an `onclick()` handler to the Sign-In button.
 
-7. The `.auth()` method is available to us through the Firebase Authentication library which has been preloaded into the HTML files. `GoogleAuthProvider()` calls an instance of Google Sign-In Authentication provider. This function carries out the logic of actually signing users in. Inside the `signIn` function add this line of code:
+8. The `.auth()` method is available to us through the Firebase Authentication library which has been preloaded into the HTML files. `GoogleAuthProvider()` calls an instance of Google Sign-In Authentication provider. This function carries out the logic of actually signing users in. Inside the `signIn` function add this line of code:
   ```js
   var provider = new firebase.auth.GoogleAuthProvider();
   ```
 
-8. In the <a href="https://firebase.google.com/docs/auth/web/google-signin">Firebase documentation</a> we can find the code we need to sign in a user using Google Sign-In. Demo using documentation or direct students to use documentation to figure out how to sign-in users, then go over it as a whole group. Add the following code to `signIn.js`.
+9. In the <a href="https://firebase.google.com/docs/auth/web/google-signin">Firebase documentation</a> we can find the code we need to sign in a user using Google Sign-In. Demo using documentation or direct students to use documentation to figure out how to sign-in users, then go over it as a whole group. Add the following code to `signIn.js`.
 ```js
 firebase.auth()
   // triggers a Google Sign-in pop up to render and allows users to login using a Google account
@@ -76,16 +83,16 @@ firebase.auth()
 });
 ```
 
-9. Pause to discuss the asynchronous nature of sending requests over the web. Explain that we will be using `.then()` to write out how our app should respond after the request we made is complete. 
+10. Pause to discuss the asynchronous nature of sending requests over the web. Explain that we will be using `.then()` to write out how our app should respond after the request we made is complete. 
 
-10. Once a user has logged in, they should be redirected to a form to create a note. Have students add this line to their .`then()` method. It uses the Javascript `window` object to navigate the user to the `noteForm.html` page.
+11. Once a user has logged in, they should be redirected to a form to create a note. Have students add this line to their .`then()` method. It uses the Javascript `window` object to navigate the user to the `noteForm.html` page.
 ```js
 window.location = 'noteForm.html';
 ```
 
-11. Explain error handling, and emphasize that it is always a good idea to handle errors and return some data back to the user.
+12. Explain error handling, and emphasize that it is always a good idea to handle errors and return some data back to the user.
 
-12.  Add this code to the end of the `.catch()` method:
+13.  Add this code to the end of the `.catch()` method:
 ```js
   const err = {
     errorCode,
@@ -96,7 +103,7 @@ window.location = 'noteForm.html';
   console.log(err)
 ```
 
-13. At this point, the `signIn()` function should look like this:
+14. At this point, the `signIn()` function should look like this:
 ```js
 const signIn = () => {
   console.log('test')
@@ -135,18 +142,18 @@ const signIn = () => {
 }
 ```
 
-14. Encourage students to test their code up to this point by stepping through their program so far. Students should be able to simulate logging in through Google and be redirected to another HTML page with a form for creating a note. In the Emulator UI, under the authentication tab, students should be able to see the fake user that we just logged in.
+15. Encourage students to test their code up to this point by stepping through their program so far. Students should be able to simulate logging in through Google and be redirected to another HTML page with a form for creating a note. In the Emulator UI, under the authentication tab, students should be able to see the fake user that we just logged in.
 
-15. Add the logic to write to the database to `writeNote.js`.
+16. Add the logic to write to the database to `writeNote.js`.
 
-16. For the optimal user experience, the user state should persist between all of the HTML pages. To do that we can trigger a function as soon as the page loads to see whether or not a user is logged in. Once again we'll use the `window` object. We can call the `.onload()` event to trigger some functionality as soon as the page loads:
+17. For the optimal user experience, the user state should persist between all of the HTML pages. To do that we can trigger a function as soon as the page loads to see whether or not a user is logged in. Once again we'll use the `window` object. We can call the `.onload()` event to trigger some functionality as soon as the page loads:
 ```js
   window.onload = event => {
 
   }
 ```
 
-17. The `.onAuthStateChanged()` method observes whether or not a user is signed in: if so, it makes the data for that user available to us, if not we can redirect that user back to the sign in page to log in. We are defining `googleUser` here, but want to make it global so that we can call it from another function that we'll write later on. For this reason, have students declare the `googleUser` variable by adding this code to the very top of their script file: `let googleUser;`.
+18. The `.onAuthStateChanged()` method observes whether or not a user is signed in: if so, it makes the data for that user available to us, if not we can redirect that user back to the sign in page to log in. We are defining `googleUser` here, but want to make it global so that we can call it from another function that we'll write later on. For this reason, have students declare the `googleUser` variable by adding this code to the very top of their script file: `let googleUser;`.
 ```js
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -158,16 +165,16 @@ const signIn = () => {
 });
 ```
 
-18. It's now time to write the logic to create a new note and save it to the database. Give students a chance to explore documentation to see if they can figure how to write to realtime databases. Then solicit their help in guiding you through implementing this in the app. 
+19. It's now time to write the logic to create a new note and save it to the database. Give students a chance to explore documentation to see if they can figure how to write to realtime databases. Then solicit their help in guiding you through implementing this in the app. 
 
-19. Write the shell of the function that will handle submitting a new note and persist this data to our realtime database.
+20. Write the shell of the function that will handle submitting a new note and persist this data to our realtime database.
   ```js
   const handleNoteSubmit = () => {
 
   }
   ```
 
-20. Inside of our function a couple of things need to happen. Add comments to make our next steps more clear.
+21. Inside of our function a couple of things need to happen. Add comments to make our next steps more clear.
 ```js
 const handleNoteSubmit = () => {
   // 1. Capture the form data
@@ -176,7 +183,7 @@ const handleNoteSubmit = () => {
 }
 ```
 
-21. Capture the form data. We'll use query selectors to select the input fields in our form.
+22. Capture the form data. We'll use query selectors to select the input fields in our form.
 ```js
 const handleNoteSubmit = () => {
   // 1. Capture the form data
@@ -187,7 +194,7 @@ const handleNoteSubmit = () => {
 }
 ```
 
-22. Format the data and write it to our database. In order to write to our database, we need to reference the endpoint where it will be stored. 
+23. Format the data and write it to our database. In order to write to our database, we need to reference the endpoint where it will be stored. 
 We'll call `firebase.database().ref()` and in the `.ref()` method we'll pass in the path to the user's data. Here we can use the `googleUser` variable that we defined earlier. Inside this variable we stored some data about our user. We can use this variable to access our user's user id, and use that to route us to their data (`users/${googleUser.uid}}`).
 ```js
 const handleNoteSubmit = () => {
@@ -203,7 +210,7 @@ const handleNoteSubmit = () => {
 }
 ```
 
-23. Clear the form so that we can write a new note. 
+24. Clear the form so that we can write a new note. 
 ```js
 const handleNoteSubmit = () => {
   // 1. Capture the form data
