@@ -32,12 +32,11 @@ Starter code can be found in the `day8_starter` directory - moving forward, sinc
 * Select "Also set up Firebase hosting".
 * Click "Register App". Step through the rest of the set up, and click "Continue to console".
 
-2. There are multiple ways to initialize Firebase in a project directory. One of the simplest ways to do this is through hosted URLs that we can plug into our application. Since students have set up hosting, these urls are available to use. Have students load up the necessary Firebase libraries by adding this code to the head of their `index.html` file:
+2. There are multiple ways to initialize Firebase in a project directory. One of the simplest ways to do this is through hosted URLs that we can plug into our application. Since students have set up hosting, these urls are available to use. For this project only need to include the Realtime Database, and emulator libraries in order to use these tools. Have students load up the necessary Firebase libraries by adding this code to the head of their `index.html` file:
 ```html
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
 <!-- include only the Firebase features as you need -->
-<script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
 <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
 <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 ```
@@ -88,7 +87,7 @@ const findMessage = (messages) => {
 }
 ```
 
-10. Add functionality to render the message as HTML in our `viewMessage.html` file.
+10. Add functionality to render the message as HTML in our `viewMessages.html` file.
 ```js
 const renderMessageAsHtml = (message) => {
     // Hide Input Form

@@ -17,7 +17,7 @@
 
 ## What We're Building
 
-Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database. Today's lesson is intentionally short. Use the remaining time to review any concepts from the last week that students might have struggled with, or that feels important to reinforce as students prepare to enter project mode tomorrow. 
+We'll continue building out our Secret Messaging App, with a focus on adding the ability for users to interact with the app by generating their own data. Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database. Today's lesson is intentionally short. Use the remaining time to review any concepts from the past week that students might have struggled with, or that feels important to reinforce as students prepare to enter project mode tomorrow. 
 
 ## Starting Code
 
