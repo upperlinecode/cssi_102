@@ -71,6 +71,8 @@ The finished code for today's code along can be found in the `day9_final` folder
 
 ## Extensions for Independent Practice
 
+NOTE: This day is the culmination of several days of work, so consider looking back at unfinished extensions from prior days to round out this list.
+
 ### Mild
 
 - Limit the number of characters that a message can be.
@@ -82,4 +84,4 @@ The finished code for today's code along can be found in the `day9_final` folder
 
 ### Spicy
 
-- Write logic to randomly generate a unique key. Use this to identify each data node, instead of the automatically generated Firebase key. 
+- EXTRA SPICY: Right now, our application stores our "password" right there in the firebase console where we, the owners of the app, can see it. We're not respecting the privacy of our users very much. One way to fix that is to **hash** the password (convert it to something else) before we store it. There are lots of ways to do that, but the documentation on in the [jsHashes](https://github.com/h2non/jshashes) library is pretty good, and it may be all you need to hash the password that a user enters before you store it, and before you use it to retrieve stored records. 
