@@ -131,63 +131,68 @@ const button1 = document.querySelector("#button1");
 
 ## Stepped Solution
 
-1. Show students the finished project, and let them play with the petting zoo. Give them a chance to talk about what it does. Consider asking questions like "which animal's button do you think has the most complicated code?"
+1. Show students the finished project, and let them play with the petting zoo. Give them a chance to talk about what it does. Consider asking questions like "which animal's button do you think has the most complicated code?" Name that what brings this project to life is *JavaScript*, and so that's what we'll be using today. 
 
-2. Share the starter code with students, have them open the preview, and show them how to navigate to the JS console in their browsers. They're likely to notice that the page looks almost finished, but point out that right now none of the buttons do anything. 
+2. Share the starter code with students, have them open the preview. They're likely to notice that the page looks almost finished, but point out that right now none of the buttons do anything.
 
-3. Have students study the HTML. Name that there are roughly 50 elements on the page, and that none of those are added to JavaScript automatically. They will have to be explicitly selected if we want to bring them to life. Give students time to try to identify which elements we'll need to select for interactivity. Students will likely identify the buttons, and will not likely realize we'll also need the `"status"` paragraphs - that's fine. 
+3. Open the inspector and show students how to study the HTML. If you haven't used the inspector at all in the first two days, you'll want to take extra time to point out that if they mouse over an element in the inspector, the corresponding element will be show in the browser. Demonstrate the "select an element" tool and show that you can use it to click on an element in the browser to see the corresponding HTML in the inspector.
 
-4. Open the JavaScript file and point out that there should be a "script running" message logged to the console, but there isn't just yet - that's because we haven't connected the JavaScript file to our HTML file. Find the `script` tag and add `"script.js"` to the src attribute so JavaScript file runs. Confirm that everyone who is coding along sees that message before continuing. 
+4. Name that there are roughly 50 elements on the page, and that none of those are added to JavaScript automatically. They will have to be explicitly **selected** if we want to bring them to life. Give students time to try to identify which elements we'll need to select for interactivity. Students will likely identify the buttons, and will not likely realize we'll also need the `"status"` paragraphs - that's fine. 
 
-5. Point out that one element has already been selected (using a `#` to look by ID, just like in CSS) and stored in a constant. If you choose to discuss constants, do so only briefly. Then, add `console.log(button1)` and demonstrate how most browsers will not only log a lot of information about the selected element, but they will also highlight the corresponding rendered element on the page when you mouse over it in the console.
+5. Show students how to navigate to the JS console in their browsers. Make sure everyone is able to open their JS console before moving on, and pause briefly to explain that the console will be our primary JS debugging tool. 
 
-6. You can either repeat this process with `querySelector()` to select all four buttons, have students do this part independently for practice, or repeat this process each time you get ready to add another event. 
+6. Open the JavaScript file and point out that there should be a "script running" message logged to the console, but there isn't just yet - that's because we haven't connected the JavaScript file to our HTML file. Find the `script` tag and add `"script.js"` to the src attribute so JavaScript file runs. Confirm that everyone who is coding along sees that message before continuing. 
 
-7. Add `button1.addEventListener("click", e => {})`. This is a LOT of code all at once, and it's glossing over a fair bit. Students generally handle this perfectly well, but it can be helpful to have a planned think-aloud to work in key vocabulary as you type. 
+7. Point out that one element has already been **selected** (using a `#` to look by ID, just like in CSS) and stored in a constant. If you choose to discuss constants, do so only briefly. Then, add `console.log(button1)` and demonstrate how most browsers will not only log a lot of information about the selected element, but they will also highlight the corresponding rendered element on the page when you mouse over it in the console.
+    - Using a `#` to select by ID will feel intuitive to students who have had HTML and CSS practice prior to this week, but if most of your students haven't used CSS before, you may want to pause here and explain why that `#` is so important by contrasting it with something like `querySelector(div)`. 
+
+8. You can either repeat this process with `querySelector()` to select all four buttons, have students do this part independently for practice, or repeat this process each time you get ready to add another event. As long as you have emphasized the word "selected" each time it has been bolded in these instructions, students tend to take to `querySelector()` pretty intuitively. 
+
+9. Add `button1.addEventListener("click", e => {})`. This is a LOT of code all at once, and it's glossing over a fair bit. Students generally handle this perfectly well, but it can be helpful to have a planned think-aloud to work in key vocabulary as you type. 
     * For example: "We're going to take button1 and add an event listener to it. We'll listen specifically for a *click* event, and that event will be fed into a function. We're going to build that function out right here with an arrow, so that event will trigger this block of code between curly braces."
     * NOTE: While this is technically a *callback* function, that vocabulary is generally not very helpful for students at this juncture. Consider glossing over that for now and coming back to it when that vocabulary feels more important. 
 
-8. Inside the arrow function, add `console.log("Button 1 pressed!")` and show students that we have our first working button!
+10. Inside the arrow function, add `console.log("Button 1 pressed!")` and show students that we have our first working button!
 
-9. Add `alert("Meh-eh-eh-eh!")` to that first button's arrow function.
+11. Add `alert("Meh-eh-eh-eh!")` to that first button's arrow function.
 
-10. Celebrate! The first button is done!
+12. Celebrate! The first button is done!
 
-11. Add `button2.addEventListener("click", e => {})`, add a `console.log("Button 2 pressed!")`, and then either ask or tell students what else (based on the finished example) should happen when button 2 is pressed. 
+13. Add `button2.addEventListener("click", e => {})`, add a `console.log("Button 2 pressed!")`, and then either ask or tell students what else (based on the finished example) should happen when button 2 is pressed. 
 
-12. Since we're going to display the results in the `status2` paragraph, we'll need to select that as well. Add `const status2 = document.querySelector("#status2")` to your script and then a `console.log(status2)` to confirm that it has been selected. 
+14. Since we're going to display the results in the `status2` paragraph, we'll need to select that as well. Add `const status2 = document.querySelector("#status2")` to your script and then a `console.log(status2)` to confirm that it has been selected. 
 
-13. We want to change the *inside* of the `status2` paragraph, so we'll do that using the `.innerHTML` property. This will leave the opening and closing tags intact, but reset the inside to whatever we specify. Add `status2.innerHTML = "Thanks for petting the bunny! He looks really happy!"` to your arrow function for button 2.
+15. We want to change the *inside* of the `status2` paragraph, so we'll do that using the `.innerHTML` property. This will leave the opening and closing tags intact, but reset the inside to whatever we specify. Add `status2.innerHTML = "Thanks for petting the bunny! He looks really happy!"` to your arrow function for button 2.
 
-14. Ask or tell students what's different about the third button based on what they saw in the finished version. Name that we're going to need a counter to keep track of the number of carrots. Briefly discuss `let` as a way to initialize variables, and add `let carrots = 2` to start off with the correct number.
+16. Ask or tell students what's different about the third button based on what they saw in the finished version. Name that we're going to need a counter to keep track of the number of carrots. Briefly discuss `let` as a way to initialize variables, and add `let carrots = 2` to start off with the correct number.
 
-15. Capture `status3` in a constant with a `.querySelector()`, and console.log it out to make sure it worked.
+17. Capture `status3` in a constant with a `.querySelector()`, and console.log it out to make sure it worked.
 
-16. Add the event listener for button 3, test that it's working with a `console.log("Button 3 pressed!")`. 
+18. Add the event listener for button 3, test that it's working with a `console.log("Button 3 pressed!")`. 
 
-17. Add `carrots = carrots + 1` and describe what that will do, and then immediately add `status3.innerHTML = "Coco has had " + carrots + " carrots today!"` and discuss what will happen here. Since this is our first exploration of concatenation in this course, it might we worth discussing Strings and how that `+` sign is assumed to mean "glue these two things together" whenever JavaScript can't reasonably sum them.
+19. Add `carrots = carrots + 1` and describe what that will do, and then immediately add `status3.innerHTML = "Coco has had " + carrots + " carrots today!"` and discuss what will happen here. Since this is our first exploration of concatenation in this course, it might we worth discussing Strings and how that `+` sign is assumed to mean "glue these two things together" whenever JavaScript can't reasonably sum them.
 
-18. Ask or tell students what's different about the fourth and final button.
+20. Ask or tell students what's different about the fourth and final button.
     * Note that the fourth button is really just additional practice. If there isn't time, the fourth button could reasonably be something that some students get to as part of independent practice. 
 
-19. Since we're going to be manipulating a much larger chunk of the page, have students add `const zoo = document.querySelector(".container")`. Then add `console.log(zoo)` to confirm that we've done it. 
+21. Since we're going to be manipulating a much larger chunk of the page, have students add `const zoo = document.querySelector(".container")`. Then add `console.log(zoo)` to confirm that we've done it. 
 
-20. Add the fourth button's event listener and a console.log statement inside it to confirm that the event is firing. 
+22. Add the fourth button's event listener and a console.log statement inside it to confirm that the event is firing. 
 
-21. Add the below line of code to the event listener's arrow function. 
+23. Add the below line of code to the event listener's arrow function. 
 
 ```javascript
 zoo.innerHTML = `<h1 class="title">Due to some dangerous rulebreaking, the petting zoo is temporarily closed</h1>`
 ```
 
-22. It's worth pointing out that we're using bactics for this string instead of quotation marks like we used for the rest. Point out that you can use single quotes, double quotes, and backtics to denote a String in JavaScript, and award a big high five to any student who can figure out why we can't use double quotes here.  
+24. It's worth pointing out that we're using bactics for this string instead of quotation marks like we used for the rest. Point out that you can use single quotes, double quotes, and backtics to denote a String in JavaScript, and award a big high five to any student who can figure out why we can't use double quotes here.
 
 ## Extensions for Independent Practice
 
 ### Mild
 
-- Add a fifth animal! Model it after whichever of the four example animals behavior you want to replicate. 
-- Change at least one of the animals to the animal of your choice. Modify the HTML to reflect that, and modify the event listener as well. 
+- Add a fifth animal! Model it after whichever of the four example animals whose behavior you want to replicate. 
+- Change at least one of the example animals to an animal of your choice, like a hamster or a lion. Modify the HTML to reflect that, and modify the event listener as well. 
 
 ### Medium
 

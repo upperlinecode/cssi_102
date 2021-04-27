@@ -221,7 +221,7 @@ inputField.addEventListener("change", (e) => {
 
 ### Medium
 
-- Add in another row of tiles, and add in the next three languages. Code out thier functionality accordingly. 
+- Add in another row of tiles, and add in the next three languages. Code out their functionality accordingly. 
 - Figure out a way to keep track of how many correct guesses a user has made. Give them a congratulations message if they get them all.
 - Change the topic of the game entirely. This could / should be a quiz about something interesting to you, like the top 10 restaurants in your neighborhood, or the top 5 characters in your favorite show!
 
