@@ -38,12 +38,12 @@ const submitMessage = () => {
 3. When students realize that the `console.log()` statement prints nothing, walk them through the steps of confirming that the Javascript file is linked to the `index.html` header. Guide them to the realization that the "Send Message" button isn't triggering any functionality. Explain event handlers and how they allow us to add interactivity and logic to our currently static site.
 
 4. Add a click handler to the "Send Message" button. Then test the `submitMessage()` function again.
+    - Name for students that so far we've used `document.querySelector()` and `.addEventListener('click')` to connect specific JavaScript functions to certain HTML elements and user events. While we could certainly do something similar here, we can also achieve that same thing in one step with an `onclick` attribute. This isn't as versatile as `.addEventListener()` and won't work perfectly in all situations, but in this case, it will achieve the same result. Ask students which syntax they prefer, and if they indicate a preference for the `.addEventListener()` method, then reassure them that they can refactor this code later if they like. 
 ```html
 <button class="button is-block is-fullwidth is-primary is-medium is-rounded" onclick="submitMessage()">
   Send Message
 </button>
 ```
-    - Name for students that so far we've used `document.querySelector()` and `.addEventListener('click')` to connect specific JavaScript functions to certain HTML elements and user events. While we could certainly do something similar here, we can also achieve that same thing in one step with an `onclick` attribute. This isn't as versatile as `.addEventListener()` and won't work perfectly in all situations, but in this case, it will achieve the same result. Ask students which syntax they prefer, and if they indicate a preference for the `.addEventListener()` method, then reassure them that they can refactor this code later if they like. 
 
 5. We'll be using the DOM again to capture input from our form. Probe students for understanding of the DOM, before writing out the code. 
 ```js
