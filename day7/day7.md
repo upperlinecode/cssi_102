@@ -113,10 +113,10 @@ A single JSON node that represents our data will look like this. Let students kn
 ### Medium
 
 - Create at least 10 unique records in your realtime database. This will give you a head start for tomorrow, as you will be reading data from your realtime database.
-- Create a full-fledged media library.
+- To practice with the terminal, create a full-fledged media library in your CloudShell - use `mkdir` to create a folder called `Media`, and then inside that, create folders for music, movies, and books, and then populate each of those with files for all your favorite media.
  
 
 ### Spicy
 
 - Create a second realtime database to store data about whatever you'd like: movies, books, sports teams, etc. 
-- Create a set of directories that represents where they live. They might start with their country, then put their state inside that, etc. Then have them add a neighbor, a cousin, or someone else. It might even be more enjoyable for students to do this with famous places they'd like to go, or fictional places like Westeros, or The Land of Ooo.
+- To practice with the terminal, create a set of directories that represents where you live. You might start with their country, then put your state inside that, etc. Then add a neighbor, a cousin, or someone else. If you don't want to do your real address, you could do this with famous a place you'd like to go, or a fictional place like Westeros or The Land of Ooo.
