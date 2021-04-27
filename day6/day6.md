@@ -47,6 +47,7 @@ Note: This lesson assumes that students have mastered all the JavaScript concept
       <p class="subtitle">
         Gifs like grandma used to make :)
       </p>
+      <img src="https://cdn.glitch.com/89fb5b85-4c20-461c-abe1-c7f1bd17c13c%2FPoweredby_100px-White_VertText.png?v=1619531592690" alt="Powered by Giphy"/>
     </div>
   </section>
   <div class="container">
@@ -124,88 +125,78 @@ NOTE: You can definitely cover this content without getting deep into the theory
 
 The Prelude and Part 1 of this lesson are both meant to support students who haven't covered APIs, and therefore may not have thought about accessing a webpage as a request and response. 
 
-This is one of the longest walkthroughs we've done so far, but it's not actually critically important to move ahead into additional content. If students are in the panic zone, it's entirely possible to take one of the following different approaches:
-* Skip this discussion of APIs in favor of a much simpler project that reviews content from week 1.
-* Use this day as a way to jump start week 2 by doing some isolated practice with just command line. 
+### Lesson tips:
+
+This is one of the longest walkthroughs we've done so far, but the content is not critically important to move ahead to the next lesson. If students are in the panic zone, you won't want to do this lesson in full. Here are four ways to utilize this day:
 * Do *only* Part 1 of this lesson as a way to preview JSON responses, which will be extremely helpful prior knowledge once we retrieve records from Firebase.
+* If students need review of week 1 content, skip this discussion of APIs in favor of a much simpler project that reviews content from week 1.
+* If you anticipate that command line is going to be stressful for students, skup this lesson and instead, use this day as a way to jump start week 2 by doing some isolated practice with just command line. 
+* Do the entire lesson as written.
 
 ### PRELUDE: What is an API?
 
-Show students an example of an API in action. The lowest-touch example might be any site that populates the city and state based on a zip code, or any site with an embedded Google Map (like airbnb). In fact, not only is airbnb using an API, it's using the *Google Maps API*. 
+1. Show students an example of an API in action. The lowest-touch example might be any site that populates the city and state based on a zip code, or any site with an embedded Google Map (like airbnb). In fact, not only is airbnb using *an* API, it's using the *Google Maps API*. 
 
-Pause to mention that API stands for **Application Program Interface**. Talk about the fact that you'll likely want to use an API anytime you want to interact with a large base of information that someone else has already created, especially when recreating that information yourself would require prohibitive time and effort.
+2. Pause to mention that API stands for **Application Program Interface**. Talk about the fact that you'll likely want to use an API anytime you want to interact with a large base of information that someone else has already created, especially when recreating that information yourself would require prohibitive time and effort.
 
-Point out that requesting information from an API can often cost money - usually tiny amounts that add up over time - but that we'll be focusing on APIs which can be used for free. 
+3. Point out that requesting information from an API can often cost money - usually tiny amounts that add up over time - but that we'll be focusing on APIs which can be used for free. 
 
 ### PART 1: APIs in the Browser
 
-NOTE: This section is written as a script you can use with students - you're welcome to use it as-is, or to adjust it to your voice. This script hyper-emphasizes a lot of new vocabulary.
+NOTE: Since we aren't *creating* anything in part 1 of this lesson, this section is written as a script you can use with students - you're welcome to use it as-is, or to adjust it to your voice. This script hyper-emphasizes a lot of new vocabulary since we're focused on building conceptual understanding. Please be sure to pause and emphasize all the bolded words.
 
-Before we start coding, let's spend some time talking about how an API works, and how we request information from an API. 
+4. Frame the day.
+> Before we start coding, let's spend some time talking about how an API works, and how we request information from an API. 
 
-Normally, if we look at a web page like `google.com`, we're **REQUESTING** information from a server. That server sends back some HTML (and usually some CSS and some JavaScript as well) in the form of a **RESPONSE**. We generally don't think of that response as being a set of `.html`, `.css`, and `.js` files, we generally just think of that whole collection of code in three different languages as a "webpage."
+5. Discuss requests and responses.
+> Normally, if we look at a web page like `google.com`, we're **REQUESTING** information from a server. That server sends back some HTML (and usually some CSS and some JavaScript as well) in the form of a **RESPONSE**. We generally don't think of that response as being a set of `.html`, `.css`, and `.js` files, we generally just think of that whole collection of code in three different languages as a "webpage."
 
-But we can request a whole lot more than just webpages, and we can get lots of other responses back besides just HTML documents. 
+3. Introduce JSON as a concept.
+> We can actually request a whole lot more than just webpages, and we can get lots of other responses back besides just HTML documents. Many services send us back information in a format called **JSON**, which stands for **JavaScript Object Notation**. Rather than describe it to you, let's just play with it. 
 
-Many API's send us back information in a format called **JSON**, which stands for **JavaScript Object Notation**. Rather than describe it to you, let's just play with it. 
+4. Share `https://jservice.io/api/random` with students, and model getting a JSON response.
+> Let's use this URL to **REQUEST** a JSON **RESPONSE** from an API called jService - an API devoted entirely to questions from the TV show *Jeopardy*. 
 
-Use the following URL to **REQUEST** a JSON **RESPONSE** from an API called jService - an API devoted entirely to questions from the TV show *Jeopardy*. 
+5. Explain endpoints.
+> If this API call worked, each of you **REQUESTED** a random Jeopardy question from the `/random` **ENDPOINT**, and each you got a random **RESPONSE** from the jService API. 
 
-> Pause to describe Jeopardy if students haven't ever seen it. 
+6. Add a JSON Viewer.
+> The JSON probably came back a little bit hard to read since it's all squished together. You may wish to add a JSON viewer plugin to Chrome. [JSONview](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) is a really simple one that works well.
 
-```
-https://jservice.io/api/random
-```
+7. If you have time, or if you're only teaching part 1 of this lesson, pause to play a game, and let some students ask the questions they found to the class. Follow up each by asking how many points that question is worth, and maybe even what category it's from.
 
-If this API call worked, each of you **REQUESTED** a random Jeopardy question from the `/random` **ENDPOINT**, and each you got a random **RESPONSE** from the jService API. 
+8. Hint at the value of documentation by doing something silly that students often do: guessing at code that might exist.
+> I didn't just guess that there would be a `/random` endpoint, by the way. We could try making up an endpoint like `/coolClue`, but it probably won't work. Let's try `https://jservice.io/api/coolClue` and see what happens.
 
-If you're using Firefox, the JSON **RESPONSE** may have been formatted automatically, so it might be easy to read already. If you're using Chrome, you may wish to add a JSON viewer plugin. [JSONview](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) is a really simple one that works well.
+9. Explain that a 404 is still a response.
+> We got a message that said "The page you were looking for doesn't exist" - and if we open up the JavaScript console, we'll see a familiar **RESPONSE CODE**: 404 (Not Found). We'd definitely rather get a 200 (Success) code. 
 
-> If you have time, pause to play a game, and let some students ask their questions to the class. Follow up each by asking how many points that question is worth, and maybe even what category it's from.
+10. Show the documentation.
+> So since I didn't guess, where did I figure out that `/random` will work? I looked at the [jService Documentation](https://jservice.io/) to see their list of endpoints and found one that worked for me. 
 
-I didn't just guess that there would be a `/random` endpoint, by the way. We could try making up an endpoint like `/coolClue`, but it probably won't work. 
+11. Model the `/categories` endpoint.
+> The random endpoint is cool, but sometimes the questions that come back are a little outside my area of expertise. I want to find a really good category, so I am going to **REQUEST** something from the `categories` endpoint: `https://jservice.io/api/categories`.
 
-```
-https://jservice.io/api/coolClue
-```
+12. Explain default behaviors and query parameters.
+> This doesn't seem quite right, though. It's just a single category called "prehistoric times" - I asked for categor**ies**, not just the first one on the list. 
+> 
+> Well, turns out most API endpoints are designed to conserve data. So if I'm not specific in what I ask for, I'm going to get the bare minimum back. That's why I'll need to add some **query parameters** to my request. To show that I'm done talking about the endpoint in my request, and am moving on to the specifics of my **query**, I'll add a `?` question mark to the URL I'm requesting. Then I'll add in the options that I want: `https://jservice.io/api/categories?count=20`
 
-We got a message that said "The page you were looking for doesn't exist" - and if we open up the JavaScript console, we'll see a familiar **RESPONSE CODE**: 404 (Not Found). We'd definitely rather get a 200 (Success) code. 
+13. OPTIONAL: Show multiple parameters.
+> This is cool, but still didn't include any categories that struck my eye, so I'll try adding another option to look at 20 categories starting at the 21st category: `https://jservice.io/api/categories?count=20&offset=21`
 
-So since I didn't guess, where did I figure out that `/random` will work? I looked at the [jService Documentation](https://jservice.io/) to see their list of endpoints and found one that worked for me. 
+14. Show additional documentation.
+> Even looking at the second set of responses, I still didn't see one I loved, so I actually checked out the ["popular categories" documentation](https://jservice.io/popular) and found one I really liked. Category 105 is called "three-letter words", and those are really less like trivia, and more like races or puzzles. 
 
-The random endpoint is cool, but sometimes the questions that come back are a little outside my area of expertise. I want to find a really good category, so I am going to **REQUEST** something from the `categories` endpoint. 
+15. Demonstrate how to use the `/clues` endpoint.
+> Let's use the `/clues` endpoint to look for clues from a specific category: `https://jservice.io/api/clues?category=105`.
+>
+> So we've finally done it - we've got a huge chunk of questions that could make for a really fun game!
 
-```
-https://jservice.io/api/categories
-```
+16. Consider pausing here to play a game with the questions, allowing students to ask and answer questions. This is an especially fun way to end the day if you're not continuing onto part 2. 
 
-This doesn't seem quite right, though. It's just a single category called "prehistoric times" - I asked for categor**ies**, not just the first one on the list. 
-
-Well, turns out most API endpoints are designed to conserve data. So if I'm not specific in what I ask for, I'm going to get the bare minimum back. That's why I'll need to add some **query parameters** to my request. To show that I'm done talking about the endpoint in my request, and am moving on to the specifics of my **query**, I'll add a `?` question mark to the URL I'm requesting. Then I'll add in the options that I want. 
-
-```
-https://jservice.io/api/categories?count=20
-```
-
-This is cool, but still didn't include any categories that struck my eye, so I'll try adding another option to look at 20 categories starting at the 21st category. 
-
-```
-https://jservice.io/api/categories?count=20&offset=21
-```
-
-Even looking at the second set of responses, I still didn't see one I loved, so I actually checked out the ["popular categories" documentation](https://jservice.io/popular) and found one I really liked. Category 105 is called "three-letter words", and those are really less like trivia, and more like races or puzzles. 
-
-Let's use the `/clues` endpoint to look for clues from a specific category. 
-
-```
-https://jservice.io/api/clues?category=105
-```
-
-So we've finally done it - we've got a huge chunk of questions that could make for a really fun game!
-
-> Consider pausing here to play a game with the questions, allowing students to ask and answer questions. 
-
-So now that we've established what APIs are, and how we can request JSON reponses from them, we're ready to build a webpage which uses the Giphy API. 
+17. OPTIONAL: Transition to part 2. 
+> So now that we've established what APIs are, and how we can request JSON reponses from them, we're ready to build a webpage which uses the Giphy API. 
 
 ### PART 2: APIs in JavaScript
 
@@ -213,7 +204,7 @@ So now that we've established what APIs are, and how we can request JSON reponse
 
 2. Share out the starter code and help students think through the features we'll need to add to finish this version. A lot of it is already made. 
 
-3. Have students head to developers.giphy.com and sign up for a developer account. 
+3. Have students head to developers.giphy.com and sign up for a developer account. Name that part of what they've agreed to here is **attribution**, and point out the "powered by giphy" image displayed in the final app (and in our starter code) helps us comply with that. 
 
 4. Guide students through creating an app called "GifFinder" on their developer dashboard at giphy. Giphy will push the SDK instead, but emphasize that we're learning to use APIs. Help students find their API keys. Pause to explain the purpose of API keys, and to emphasize the importance of keeping them private. Name that we're not doing a *great* job of this here, but we will work on improving that starting later this week. 
 
@@ -283,6 +274,8 @@ let myQuery = `https://api.giphy.com/v1/gifs/search?api_key=${myKey}&q=${topic}+
 
 ## Extensions for Independent Practice
 
+This is an especially important day to make sure that students feel free to self-indentify into the right level of challenge. Students who are panicked should find some comfort in the mild challenges, which are essentially just review from week 1. Students who are ready to continue thinking about APIs, however, should start with the medium challenges. 
+
 ### Mild
 
 - Change the title and subtitle of this application! Personalize it and make it your own. 
@@ -291,7 +284,7 @@ let myQuery = `https://api.giphy.com/v1/gifs/search?api_key=${myKey}&q=${topic}+
 
 ### Medium
 
-- If you didn't go over it in the code-along, think about how you could modify the query so that all the gifs your users get fit a theme. The model modified the queries to make the responses all be a little bit cat-related.
+- If you didn't go over it in the code-along, think about how you could modify the query so that all the gifs your users get fit a theme. You may or may not have noticed, but the model modified the queries to make the responses all be a little bit cat-related.
 - If you didn't go over how to do it in class, find a way to get a random gif out of the 50 that come back in the response, instead of always getting number `2` instead. 
 
 ### Spicy

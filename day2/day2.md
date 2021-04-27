@@ -178,7 +178,7 @@ This starter code can also be found in `starter/part_1/index.html`.
 ### Mild
 
 - Update this list to reflect *your* top 10 songs - you can even switch to a different medium like movies, shows, or tropical fish if you like. Change the cards to display your favorite songs along with their artists. 
-- Update the cover art for each of the songs.
+- Update the cover art for each of the songs. If you're going to attempt the medium challenges, you may want to do so after you've added only 2-3 album covers, as this could take a while.
 - Add at least three more songs! You can do even more if you have more songs to add. 
 
 ### Medium

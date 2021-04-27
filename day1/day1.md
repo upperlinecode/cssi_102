@@ -157,13 +157,21 @@ footer {
 
 18. Encourage students to do something for some brief independent practice. This could be as simple as filling out a menu item, or as complex as revamping the entire restaurant to their own tastes - adjust the scope of this task based on the time you have left in the lesson, but less lecture and more practice is generally better. 
 
-19. IF students have asked, use that as a springboard to jump into a very brief explanation and exploration of the CSS. Emphasize that the chunks of code to style an element are called **rulesets** and that each rule in a rulset is made up of two things: a **property** (like background-color) and a **value** like "aliceblue". 
+19. By this point, it's extremely likely that an advanced student has asked about why we've written the CSS the way we have, or that a beginner has asked something like "Why are divs blue?" Use that beautiful question as a springboard to jump into a very brief explanation and exploration of the CSS. Emphasize that the chunks of code to style an element are called **rulesets** and that each rule in a rulset is made up of two things: a **property** (like background-color) and a **value** like "aliceblue". 
 
-20. Demonstrate how to change the color of something by showing the [Google color picker](https://www.google.com/search?q=color+picker) - don't get into the nuances of hex codes or hexadecimal number systems, just name that the color picker gives us at least five different codes for any color we pick. We can use *any* of those codes; we'll start with hex since it's used fairly often. 
+20. Demonstrate how to change the color of something by showing the [Google color picker](https://www.google.com/search?q=color+picker) - don't get into the nuances of hex codes or hexadecimal number systems, just name that the color picker gives us at least five different codes for any color we pick. We can use *any* of those codes; we'll start with hex since it's somewhat widely used. 
 
 21. Celebrate! You and your students built a webpage together! Especially if students have had a chance to diverge in the projects they are making, try to reserve some class time to showcase those projects. 
 
 ## Extensions for Independent Practice
+
+Each day of this course includes challenges that students can attempt for independent practice. They are generally grouped in order of difficulty, and then subordered by difficulty within those groups. 
+
+That means that each student should check in with themselves before they pick which set of challenges to attempt. If a student was feeling mostly overwhelmed during the lesson, they should stick to the mild challenges. If a student was feeling challenged, but not panicked, they can start with the medium challenges. If a student was feeling somewhat bored during the lesson, they should focus on completing the spicy challenges, as the mild and medium ones may just further bore them.
+
+In general, it is reasonable to expect students to finish one set of these challenges, but this first day might be one of the only days where you encourage ALL students to start at mild and work their way up. After this, students will likely have a sense for what level of challenge they need, and can focus on the spice level that best meets their needs. 
+
+Moving forward, if you have students work in pairs, you'll want to make sure each student is paired with someone who is ready to work at the same level as they are (either because they are at that same place, or because they have agreed to operate as a mentor for the day). 
 
 ### Mild
 
@@ -172,16 +180,17 @@ footer {
 - Add 2-5 new menu items and round out your restaurant's offerings.
 - Add another `section` to your page - maybe "location" or "contact us" might be good places to start. 
 - Look up an "unordered list in HTML" and see if you can figure out a way to add an unordered list to your `about` section. If you can't think of anything to put in the list, you might use these to list out the rules for your restaurant.
-- It is worth noting that Google has an [HTML style guide](https://google.github.io/styleguide/htmlcssguide.html) which sets standards for formatting code in all of the common markup and scripting languages. These guides contain conventions for everything from indentation to semi-colons to how to order classnames and attributes. Following them can drastically improve the readbility of your code and make debugging and collaborating more seamless. Spend some time perusing through Google's Style Guide for HTML and CSS and modify at least two pieces in your code to meet the style guide conventions.
+- It is worth noting that Google has style guides which set standards for formatting code in most common markup and scripting languages. The [HTML style guide](https://google.github.io/styleguide/htmlcssguide.html) contains conventions for everything from indentation to semi-colons to how to order classnames and attributes. Following them can drastically improve the readbility of your code and make debugging and collaborating more seamless. Spend some time perusing through Google's Style Guide for HTML and CSS and **modify at least two pieces of your code** to meet the style guide conventions.
 
 ### Medium
 
 - Using an `img` element, add a photo of yourself or an avatar you like to the "About" section of the page, and maybe a 1-sentence bio about yourself. 
 - Change the cuisine and all the menu offerings of this restaurant - make it your own. If you want to open up a boba shop instead of a pizza parlor, do that!
 - Change the color scheme to match the branding you imagine for your restaurant. 
+- If you're new to CSS, play the first 5-10 levels of [CSS Diner](https://flukeout.github.io/) to practice writing your own selectors.
 
 ### Spicy
 
 - Add another page called `menu.html`, and move your menu to that page. Figure out how to create a link from your homepage (`index.html`) to your menu page. 
 - Add a third page to your site, and link it from your homepage. Try to make sure that the colors, fonts, and general layout is fairly consistent accross all your pages. 
-- Try modifying all of your code for today's code-along to meet Google's [HTML/CSS Style Guide standards](https://google.github.io/styleguide/htmlcssguide.html).
+- Try modifying **all** of your code for today's code-along to meet Google's [HTML/CSS Style Guide standards](https://google.github.io/styleguide/htmlcssguide.html).
