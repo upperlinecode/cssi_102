@@ -164,6 +164,9 @@ const renderDataAsHtml = data => {
 ## Finished Code
 The finished code for today can be found in `day12/day12_final/firebaseNotes`.
 
+## Push to Github
+Encourage students to backup their work by pushing to Github. The steps for a single user Git/Github workflow can be found in the day 5 lesson guide. Ultimately, students will use Git and Github to collaborate on their final project, so it is a good idea to have them start to build their comfort with these tools in advance.
+
 ## Extensions for Independent Practice
 
 ### Mild
