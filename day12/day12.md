@@ -17,7 +17,7 @@
 **Key vocabulary: iteration, JSON, API, window, DOM**
 
 ## What We're Building
-Today students will continue building out their notes app. We'll focus on reading data and rendering a list of data as HTML. 
+Today students will continue building out their notes app. We'll pick where we left off yesterday by adding functionality to read data and render a list of data as HTML. This lesson aims to strengthen students comfort with the Firebase API and Realtime Databases, as well as build up students confidence with parsing and manipulating data. Students will begin to solidify a foundational understanding of how the front and back end of web apps interact to create a dynamic web app.
 
 ## Starting Code
 
@@ -32,7 +32,7 @@ window.onload = event => {
 }
 ```
 
-2. Challenge students to see if they can recall the steps to validate a users authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
+2. Challenge students to see if they can recall the steps to validate a user's authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
 ```js
   // Use this to retain user state between html pages.
   firebase.auth().onAuthStateChanged(function(user) {
@@ -46,7 +46,7 @@ window.onload = event => {
   });
 ```
 
-3. After verifying that our user is logged in, it's a good idea to store their id, so that we can later query for their data. Add this line at the end of the `if` block:
+3. After verifying that our user is logged in, it's a good idea to store their id, so that we can later query for their data.Yesterday we retrieved the user's ID from the user object that was returned to us after the user logged in. Today we'll do the same thing, and store that user ID in a variable: `googleUserId`. Add this line at the end of the `if` block:
 ```js
 const googleUserId = user.uid;
 ```
@@ -58,7 +58,7 @@ const getNotes = (userId) => {
 }
 ```
 
-5. Back in our `window.onload` event, call the `getNotes` function so that it will trigger after a user has been validated. Pass the user's ID into the function call so that it can be appended the query url. At this point our `window.onload` event should look like this:
+5. Back in our `window.onload` event, call the `getNotes` function so that it will trigger after a user has been validated. Pass the user's ID into the function call so that it can be appended the query url.  At this point our `window.onload` event should look like this:
 ```js
 window.onload = (event) => {
   // Use this to retain user state between html pages.
@@ -74,7 +74,7 @@ window.onload = (event) => {
 };
 ```
 
-6. Inside the `getNotes()` function definition, start by connecting to the database and routing to the individual user's database resource:
+6. Inside the `getNotes(userId)` function definition, start by connecting to the database and routing to the individual user's database resource. Remind students that we used this path yesterday to write data to the Realtime Database. Instead of passing in the variable `userId`, we passed in `googleUser.uid`, but both variables point to the same data: the logged in user's unique id. Today we'll be referencing that same endpoint to retrieve our stored data.
 ```js
   const notesRef = firebase.database().ref(`users/${userId}`);
 ```
@@ -87,7 +87,7 @@ notesRef.on('value', (snapshot) => {
 });
 ```
 
-8. At this point the `getNotes()` function should look like this:
+8. At this point the `getNotes(userId)` function should look like this:
 
 ```js
 const getNotes = () => {
@@ -157,7 +157,7 @@ const renderDataAsHtml = data => {
     cards += createCard(note);
   };
   // Inject our string of HTML into our viewNotes.html page
-  document.getElementById('app').innerHTML = cards;
+  document.querySelector('#app').innerHTML = cards;
 };
 ```
 

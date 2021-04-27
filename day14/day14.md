@@ -21,7 +21,7 @@ Students will be manipulating a single README.md file to learn the basics of Git
 
 ## Starting Code
 
-The purpose of this lesson is to build repository to demonstrate Git and Github workflows. There is no starter or final code. 
+The purpose of this lesson is to build repository to demonstrate Git and Github workflows. There is no starter or final code. Students may have already used Git to back up their day 5 and/or day 10 projects. Acknowledge this, and let them know that some of today may be a refresher, but that they will also be learning how to use Git and Github to collaborate with their classmates.
 
 ## Stepped Solution
 
@@ -81,7 +81,15 @@ page - the page will still be blank! GitHub doesn't have any knowledge of the mo
 
 16. Since the local repository was cloned from the remote one, the local repo is aware of the remote. Ask students to confirm this by typing `git remote show origin`. 
 
-17. Since the remote is already set up, all that remains to be done is to run the command `git push origin master` and it'll sync the local changes with the remote GitHub repository. 
+17. Since the remote is already set up, all that remains to be done is to push our changes to the remote Github repository. First we'll add this line to rename our default branch from "master" to "main". Remind students that Github recently updated the default name of the primary branch to be more inclusive. Students can change the name of the main branch with this line of code:
+```bash
+git branch -M main
+```
+We'll want to sync our remote Github repository to our local directory with this line:
+```bash
+git remote add origin <remote url>
+```
+Finally we can push our local code to our remote repository with this command: `git push origin main`. Running this in our terminal will sync the local changes with the remote GitHub repository. 
 
 18. Students may be prompted to enter their username and
 password. When entering their password, it won't show up in the terminal, but it's working - just type it in and hit enter.
@@ -95,9 +103,9 @@ password. When entering their password, it won't show up in the terminal, but it
 21. As students begin to work on their final projects they will need to collaborate using Git. Describe the following scenario to students. Assume two or more students are working on the same repo together. They want to work on
 different parts of the project at the same time. How can "student A" write her code and ensure it'll be separate from the code that "student B" is writing? They can use git branches.
 
-22. We'll be using branches to add commits to the project without affecting anyone else who is also working on it. By default, git will place us in the `master` branch.
+22. We'll be using branches to add commits to the project without affecting anyone else who is also working on it. By default, git will place us in the `main` branch.
 
-23. The command to create a new branch (and switch to it) is `git checkout -b [branch-name]`. The `-b` will create a new branch. The `checkout` will switch from master to the newly created branch. The name of the branch has to be one word, but dashes and underscores are allowed.
+23. The command to create a new branch (and switch to it) is `git checkout -b [branch-name]`. The `-b` will create a new branch. The `checkout` will switch from main to the newly created branch. The name of the branch has to be one word, but dashes and underscores are allowed.
 
 24. Have students checkout a new branch `readme-about`: run the command `git checkout -b readme-about`. From there make changes to the README.md file to demonstrate the use of branches. 
 
@@ -107,14 +115,14 @@ different parts of the project at the same time. How can "student A" write her c
     * Check the status to make sure the file is correctly staged (`git status`)
     * Make a commit (`git commit -m "add about section to readme"`)
 
-26. The command we learned for pushing commits previously was `git push origin master` because we were on the local `master` branch, and we wanted to push it to the remote `master` branch. However, this time, we're on a different branch:
+26. The command we learned for pushing commits previously was `git push origin main` because we were on the local `main` branch, and we wanted to push it to the remote `main` branch. However, this time, we're on a different branch:
 `readme-about`. To sync their local changes to the remote repo, students should run the command: `git push origin readme-about`.This will save changes to the remote repository's `readme-about` branch.
 
 ### Merging a branch and handling conflicts
 
-27. Ask students: The `master` branch is the main branch - so if changes were pushed to a different branch, how can those changes be added to the `master` once it's
+27. Ask students: The `main` branch is the default branch - so if changes were pushed to a different branch, how can those changes be added to the `main` once it's
 ready?
-Explain that to incorporate changes made to a remote branch into the main branch students will need to create a pull request. A pull request is a request for the branch's code to be added to the master branch, or **merged**.
+Explain that to incorporate changes made to a remote branch into the main branch students will need to create a pull request. A pull request is a request for the branch's code to be added to the main branch, or **merged**.
 
 28. Have students go to GitHub and refresh - there should be a message about a recently pushed branch. Students should on the "Compare & pull request" button to initiate a pull request.
 
@@ -126,11 +134,11 @@ Explain that to incorporate changes made to a remote branch into the main branch
 31. Occasionally, when collaborating two people will make changes to the same file on two different branches. This requires a special process to resolve conflicting changes. To learn how to resolve conflicts, we will first need to simulate a conflict.
 
 32. In the terminal, run the following commands:
-`git checkout master` (switch to the master branch)
+`git checkout main` (switch to the main branch)
 `git checkout -b rewrite-about` (create a new branch `rewrite-about` and switch to it).
 
-33. Explain that when a new branch is created, it begins as a clone of the previous branch. In this example, `rewrite-about` contains the same code as `master` on our local branch. This creates a "forced" conflict because the local `master` branch is
-different than the remote `master` branch.
+33. Explain that when a new branch is created, it begins as a clone of the previous branch. In this example, `rewrite-about` contains the same code as `main` on our local branch. This creates a "forced" conflict because the local `main` branch is
+different than the remote `main` branch.
 
 34. Update the `README.md` file with some new text, to create a conflict.
 
@@ -138,13 +146,13 @@ different than the remote `master` branch.
 
 36. Navigate to Github to create a new pull request. GitHub can't automatically merge the two because there are conflicts. They will have to be fixed manually via GitHub's editor. Click on "Resolve conflicts" to continue.
 
-37. Github will show two labeled versions - one from the current branch, `rewrite-about`, and the other from `master`. Git needs more direction to determine how to proceed, so the file has to be manually edited. Go ahead and edit it to resolve the conflicts.
+37. Github will show two labeled versions - one from the current branch, `rewrite-about`, and the other from `main`. Git needs more direction to determine how to proceed, so the file has to be manually edited. Go ahead and edit it to resolve the conflicts.
 
 38. Click on "Mark as resolved" and then "Commit merge". This will create a new commit with the resolved changes. Once completed, merge the pull request as normal.
 
-39. We previously ran `git checkout master` to reset the state of the repo to one where `README.md` didn't exist yet. This means that the `master` branch is out of date, and that the  emote repo contains commits that `master` doesn't have.
+39. We previously ran `git checkout main` to reset the state of the repo to one where `README.md` didn't exist yet. This means that the `main` branch is out of date, and that the  emote repo contains commits that `main` doesn't have.
 
-40. It's important to keep the `master` branch up to date, and this can be done with a simple command: `git pull origin master`. Students can think of this command as the inverse of `git push origin master`. It will pull all the repo information from the `master` branch of the remote repo. After running the command, the `README.md` should exist and contain the contents from our last merged pull request.
+40. It's important to keep the `main` branch up to date, and this can be done with a simple command: `git pull origin main`. Students can think of this command as the inverse of `git push origin main`. It will pull all the repo information from the `main` branch of the remote repo. After running the command, the `README.md` should exist and contain the contents from our last merged pull request.
 
 ## Extensions for Independent Practice
 
@@ -160,5 +168,5 @@ index.html`
 
 ### Spicy
 
-- Reference documentation to figure out how to reset your project to the master branch.
+- Reference documentation to figure out how to reset your project to the main branch.
 - Reference documentation to figure out how to reset your project to a previous commit. 

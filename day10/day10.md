@@ -17,6 +17,10 @@ Share the following links with students, to give them a idea of the scope of pro
 * <a href="https://book-recs-1580a.web.app/">Book Recommender App</a>
 * <a href="https://book-search-exemplar.web.app/">Book Search App</a>
 
+## Quick refresher on creating a Firebase Project
+
+Students may benefit from a quick refresher on how to create a Firebase project in the Firebase console, and how to initialize it in their project directory. Refer to Part 2 of the <a href="/day7/day7.md">day 7 lesson </a>for a stepped solution on how to create a Firebase project and set up a Realtime Database in the Firebase console. Reference the <a href="/day8/day8.md">day 8 lesson</a> for a stepped guide on how to initialize Firebase in a project directory.
+
 ## Notes on Friday
 
 Fridays, especially the first and second Fridays of the course, are intentionally designed with no new content. These "flex days" are critical for student success - the extra time spent without the addition of new material allows them to deepen their understanding by shifting from cognitive to autonomous performance. 

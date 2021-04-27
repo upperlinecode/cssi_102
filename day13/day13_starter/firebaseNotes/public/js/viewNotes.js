@@ -28,7 +28,7 @@ const renderDataAsHtml = (data) => {
     cards += createCard(note)
   };
   // Inject our string of HTML into our viewNotes.html page
-  document.getElementById('app').innerHTML = cards;
+  document.querySelector('#app').innerHTML = cards;
 };
 
 const createCard = (note) => {

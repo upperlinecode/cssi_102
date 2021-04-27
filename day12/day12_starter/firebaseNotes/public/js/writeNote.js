@@ -14,8 +14,8 @@ window.onload = (event) => {
 
 const handleNoteSubmit = () => {
   // 1. Capture the form data
-  const noteTitle = document.getElementById('noteTitle');
-  const noteText = document.getElementById('noteText');
+  const noteTitle = document.querySelector('#noteTitle');
+  const noteText = document.querySelector('#noteText');
   // 2. Format the data and write it to our database
   firebase.database().ref(`users/${googleUser.uid}`).push({
     title: noteTitle.value,

@@ -30,19 +30,19 @@ const renderDataAsHtml = (data) => {
     cards += createCard(note, noteItem)
   };
   // Inject our string of HTML into our viewNotes.html page
-  document.getElementById('app').innerHTML = cards;
+  document.querySelector('#app').innerHTML = cards;
 };
 
 const editNote = (noteId) => {
-  const editNoteModal = document.getElementById('editNoteModal');
+  const editNoteModal = document.querySelector('#editNoteModal');
   const notesRef = firebase.database().ref(`users/${googleUserId}`);
   notesRef.on('value', (snapshot) => {
     const data = snapshot.val();
     const noteDetails = data[noteId];
-    document.getElementById('editTitleInput').value = noteDetails.title;
-    document.getElementById('editTextInput').value = noteDetails.text;
+    document.querySelector('#editTitleInput').value = noteDetails.title;
+    document.querySelector('#editTextInput').value = noteDetails.text;
   });
-  const saveEditBtn = document.getElementById('saveEdit');
+  const saveEditBtn = document.querySelector('#saveEdit');
   saveEditBtn.onclick = handleSaveEdit.bind(this, noteId);
   editNoteModal.classList.toggle('is-active');
 };
@@ -52,8 +52,8 @@ const deleteNote = (noteId) => {
 }
 
 const handleSaveEdit = (noteId) => {
-  const noteTitle = document.getElementById('editTitleInput').value;
-  const noteText = document.getElementById('editTextInput').value;
+  const noteTitle = document.querySelector('#editTitleInput').value;
+  const noteText = document.querySelector('#editTextInput').value;
   const noteEdits = {
     title: noteTitle,
     text: noteText
@@ -63,7 +63,7 @@ const handleSaveEdit = (noteId) => {
 }
 
 const closeEditModal = () => {
-  const editNoteModal = document.getElementById('editNoteModal');
+  const editNoteModal = document.querySelector('#editNoteModal');
   editNoteModal.classList.toggle('is-active');
 };
 

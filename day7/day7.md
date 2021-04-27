@@ -52,7 +52,7 @@ Note: There is no starting code today! Enjoy orienting students to Cloud Shell a
 
 10. Touch a file or two inside that directory, and then demonstrate `cd ..` to navigate up one level to the current directory's parent directory. Repeat this for at least one more directory, talking aloud as you perform each step. 
 
-11. Students need time to practice these commands, especially the navigation pieces. Consider one of the below options to make space for that.
+11. Students need time to practice these commands, especially the navigation pieces. Consider **one** of the below options to make space for that. These tasks are really involved, so consider setting a 20 minute time limit for students to complete any one of these tasks. If they aren't able to finish the activity in that time frame, encourage them to continue working on it as an extension. Students are also welcome to work on the remaining two as extensions towards the end of class. 
     * Have students create a set of directories that represents where they live. They might start with their country, then put their state inside that, etc. Then have them add a neighbor, a cousin, or someone else. It might even be more enjoyable for students to do this with famous places they'd like to go, or fictional places like Westeros, or The Land of Ooo.
     * Have students create a full-fledged media library. 
     * Have students play MIT's [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) and discuss the connections between that game and the real terminal.  
@@ -67,9 +67,9 @@ NOTE: It's possible that some students might ask about, look up, or even already
 
 2. Click "Add Project" and move through the steps to create a new Firebase project.
 
-3. Give the project a name. The name `secret-messaging-app`, or something like it, works great.
+3. Give the project a name. Students will want to give the project a descriptive name that will allow them to easily identify it. Over the next few days, we'll be using this Firebase project to build out a "Secret Message App" that we can use to communicate with our friends, so the name `secret-messaging-app` or something like it, is perfectly appropriate. 
 
-4. Enabling Google analytics is unecessary. Leave it unselected for now. 
+4. Enabling Google analytics is unnecessary. Leave it unselected for now. 
 
 5. Click "Create Project".
 
@@ -88,7 +88,7 @@ NOTE: It's possible that some students might ask about, look up, or even already
 
 11. To demonstrate the data we will be writing to/reading from our database, share an example of the data we would store in our Secret Messaging App database.
 
-A single JSON node that represents our data will look like this. Let students know they can add more key/value pairs if they choose.
+A single JSON node that represents our data will look like this. Let students know they can add more key/value pairs if they choose. 
 ```js
 {
   'uniqueKey': {
@@ -106,12 +106,17 @@ A single JSON node that represents our data will look like this. Let students kn
 ### Mild
 
 - Use the terminal and the commands you learned earlier to build an address book for your family and friends. Your address book should have an individual folder for at least five people. Within each folder you should have at least one `.txt` file.
-- Update the schema of your database. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
+- Update the structure of your Realtime Database data. Currently each data node should have two fields: `message` and `passcode`. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
+- Play MIT's [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) and discuss the connections between that game and the real terminal.
+
 
 ### Medium
 
 - Create at least 10 unique records in your realtime database. This will give you a head start for tomorrow, as you will be reading data from your realtime database.
+- Create a full-fledged media library.
+ 
 
 ### Spicy
 
 - Create a second realtime database to store data about whatever you'd like: movies, books, sports teams, etc. 
+- Create a set of directories that represents where they live. They might start with their country, then put their state inside that, etc. Then have them add a neighbor, a cousin, or someone else. It might even be more enjoyable for students to do this with famous places they'd like to go, or fictional places like Westeros, or The Land of Ooo.

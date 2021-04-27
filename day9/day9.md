@@ -17,7 +17,7 @@
 
 ## What We're Building
 
-Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database.
+Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database. Today's lesson is intentionally short. Use the remaining time to review any concepts from the last week that students might have struggled with, or that feels important to reinforce as students prepare to enter project mode tomorrow. 
 
 ## Starting Code
 
@@ -25,7 +25,8 @@ Starter code can be found in the `day9_starter` directory.
 
 ## Stepped Solution
 
-1. Start off by adding a function to `writeMessage.js` where students will write logic to send a message to the database.
+1. Start off by adding a function to `writeMessage.js` where students will write logic to send a message to the database. Students will also want to run `firebase emulators:start --only hosting`. This will start their emulators so that they can test their project. It will only run the hosting emulator, but not the database emulator. This way, when students write data to the database, it will persist. Students can run all emulators with this line: `firebase emulators:start`, but should be aware that any data they write to their database will not persist once they shut down their emulators. 
+
 ```js
 const submitMessage = () => {
 
@@ -46,16 +47,16 @@ const submitMessage = () => {
 5. We'll be using the DOM again to capture input from our form. Probe students for understanding of the DOM, before writing out the code. 
 ```js
 const submitMessage = () => {
-  const passcodeInput = document.getElementById('passcode').value;
-  const messageInput = document.getElementById('message').value;
+  const passcodeInput = document.querySelector('#passcode').value;
+  const messageInput = document.querySelector('#message').value;
 }
 ```
 
-6. Use the Firebase API to push our data to the realtime database. Have students navigate to the Firebase console to confirm that their data was successfully added. Point out that by using the Firebase API, unique keys are automatically generated for us.
+6. Use the Firebase API to push our data to the realtime database. Point out that by using the Firebase API, unique keys are automatically generated for us. Students can confirm that their data was added by navigating to the Firebase console (<a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a>) and clicking "Realtime Database" in the left-hand menu. They should be able to view a string (or list of strings) of random characters, which is the unique key for that piece of data. Clicking on that unique key will reveal their data. If students are running the database emulator, they will have to open the emulator UI to see their data. The link for the emulator UI can be found in the terminal.
 ```js
 const submitMessage = () => {
-    const passcodeInput = document.getElementById('passcode').value;
-    const messageInput = document.getElementById('message').value;
+    const passcodeInput = document.querySelector('#passcode').value;
+    const messageInput = document.querySelector('#message').value;
     
     firebase.database().ref().push({
         passcode: passcodeInput,
