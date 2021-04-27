@@ -107,7 +107,7 @@ A single JSON node that represents our data will look like this. Let students kn
 
 - Use the terminal and the commands you learned earlier to build an address book for your family and friends. Your address book should have an individual folder for at least five people. Within each folder you should have at least one `.txt` file.
 - Update the structure of your Realtime Database data. Currently each data node should have two fields: `message` and `passcode`. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
-- Play MIT's [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) and discuss the connections between that game and the real terminal.
+- Play MIT's [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html). As you play, think about the connections between that game and the real terminal.
 
 
 ### Medium
