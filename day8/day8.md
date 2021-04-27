@@ -44,7 +44,7 @@ Starter code can be found in the `day8_starter` directory - moving forward, sinc
 
 3. In Cloudshell, `cd` into the `secretMessageApp` project directory. In the terminal, type `firebase login`. If prompted, students should login with the Google account that they've used to create their Firebase project.
 
-4. Run `npm install -g firebase-tools`.
+4. Next we'll want to install the Firebase Command Line Interface (CLI) to set up and use Firebase in our project repo. Run `npm install -g firebase-tools`. This command will use the Node Package Manager to install the Firebase CLI and give us access to all the tools we need to manage, view, and deploy our Firebase projects. Students should understand that the Node Package Manager and the `npm` command are available to us through Node, and that when working in a terminal outside of Cloudshell, they may not be immediately available to us. If we want to use NPM outside of Cloudshell, we'd first have to install Node on our machine.
 
 5. Have students `firebase init` and follow the prompts to initialize Firebase in their project.
   * Which Firebase CLI features do you want to set up for this folder? Database, Hosting, Emulators
@@ -66,8 +66,8 @@ Starter code can be found in the `day8_starter` directory - moving forward, sinc
 ```js
 const getMessages = () => {
     const messagesRef = firebase.database().ref();
-    messagesRef.on('value', (snapshot) => {
-    const data = snapshot.val();
+        messagesRef.on('value', (snapshot) => {
+        const data = snapshot.val();
     });
 }
 ```

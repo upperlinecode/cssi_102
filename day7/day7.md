@@ -67,7 +67,7 @@ NOTE: It's possible that some students might ask about, look up, or even already
 
 2. Click "Add Project" and move through the steps to create a new Firebase project.
 
-3. Give the project a name. The name `secret-messaging-app`, or something like it, works great.
+3. Give the project a name. Students will want to give the project a descriptive name that will allow them to easily identify it. Over the next few days, we'll be using this Firebase project to build out a "Secret Message App" that we can use to communicate with our friends, so the name `secret-messaging-app` or something like it, is perfectly appropriate. 
 
 4. Enabling Google analytics is unnecessary. Leave it unselected for now. 
 
@@ -88,7 +88,7 @@ NOTE: It's possible that some students might ask about, look up, or even already
 
 11. To demonstrate the data we will be writing to/reading from our database, share an example of the data we would store in our Secret Messaging App database.
 
-A single JSON node that represents our data will look like this. Let students know they can add more key/value pairs if they choose.
+A single JSON node that represents our data will look like this. Let students know they can add more key/value pairs if they choose. 
 ```js
 {
   'uniqueKey': {
@@ -106,7 +106,7 @@ A single JSON node that represents our data will look like this. Let students kn
 ### Mild
 
 - Use the terminal and the commands you learned earlier to build an address book for your family and friends. Your address book should have an individual folder for at least five people. Within each folder you should have at least one `.txt` file.
-- Update the schema of your database. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
+- Update the structure of your Realtime Database data. Currently each data node should have two fields: `message` and `passcode`. Add at least two new fields to each instance of data. Make sure to name the fields consistently.
 - Play MIT's [Terminus](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) and discuss the connections between that game and the real terminal.
 
 

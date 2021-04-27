@@ -17,7 +17,7 @@
 **Key vocabulary: iteration, JSON, API, window, DOM**
 
 ## What We're Building
-Today students will continue building out their notes app. We'll focus on reading data and rendering a list of data as HTML. 
+Today students will continue building out their notes app. We'll pick where we left off yesterday by adding functionality to read data and render a list of data as HTML. This lesson aims to strengthen students comfort with the Firebase API and Realtime Databases, as well as build up students confidence with parsing and manipulating data. Students will begin to solidify a foundational understanding of how the front and back end of web apps interact to create a dynamic web app.
 
 ## Starting Code
 
@@ -32,7 +32,7 @@ window.onload = event => {
 }
 ```
 
-2. Challenge students to see if they can recall the steps to validate a users authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
+2. Challenge students to see if they can recall the steps to validate a user's authentication. Demonstrate using documentation here, and consider having the students walk you through coding the steps.
 ```js
   // Use this to retain user state between html pages.
   firebase.auth().onAuthStateChanged(function(user) {
@@ -74,7 +74,7 @@ window.onload = (event) => {
 };
 ```
 
-6. Inside the `getNotes()` function definition, start by connecting to the database and routing to the individual user's database resource:
+6. Inside the `getNotes(userId)` function definition, start by connecting to the database and routing to the individual user's database resource:
 ```js
   const notesRef = firebase.database().ref(`users/${userId}`);
 ```
@@ -87,7 +87,7 @@ notesRef.on('value', (snapshot) => {
 });
 ```
 
-8. At this point the `getNotes()` function should look like this:
+8. At this point the `getNotes(userId)` function should look like this:
 
 ```js
 const getNotes = () => {

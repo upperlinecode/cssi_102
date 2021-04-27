@@ -18,7 +18,7 @@
 
 ## What We're Building
 
-Over the next few days we'll be building a notes app, similar to Google Keep. Today we'll focus on authenticating Google users through Firebase, and using the Firebase API to write new data to our realtime database. 
+Over the next few days we'll be building a notes app, similar to Google Keep. The goal of this project will be to help students understand what is generally required to build a dynamic web app, and to build their confidence and skills in developing robust apps using the Firebase suite. Today we'll build an authentication flow, where we'll be able to sign-in Google users. We'll also be using the Firebase API to write new data to our realtime database. 
 
 ## Starting Code
 
@@ -146,7 +146,7 @@ const signIn = () => {
   }
 ```
 
-17. The `.onAuthStateChanged()` method observes whether or not a user is signed in: if so, it makes the data for that user available to us, if not we can redirect that user back to the sign in page to log in.
+17. The `.onAuthStateChanged()` method observes whether or not a user is signed in: if so, it makes the data for that user available to us, if not we can redirect that user back to the sign in page to log in. We are defining `googleUser` here, but want to make it global so that we can call it from another function that we'll write later on. For this reason, have students declare the `googleUser` variable by adding this code to the very top of their script file: `let googleUser;`
 ```js
   firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -176,7 +176,7 @@ const handleNoteSubmit = () => {
 }
 ```
 
-21. Capture the form data.
+21. Capture the form data. We'll use query selectors to select the input fields in our form.
 ```js
 const handleNoteSubmit = () => {
   // 1. Capture the form data
@@ -187,7 +187,8 @@ const handleNoteSubmit = () => {
 }
 ```
 
-22. Format the data and write it to our database. 
+22. Format the data and write it to our database. In order to write to our database, we need to reference the endpoint where it will be stored. 
+We'll call `firebase.database().ref()` and in the `.ref()` method we'll pass in the path to the user's data. Here we can use the `googleUser` variable that we defined earlier. Inside this variable we stored some data about our user. We can use this variable to access our user's user id, and use that to route us to their data (`users/${googleUser.uid}}`).
 ```js
 const handleNoteSubmit = () => {
   // 1. Capture the form data
