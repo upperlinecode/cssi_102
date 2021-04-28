@@ -32,6 +32,9 @@ Share the following links with students, to give them a idea of the scope of pro
 
 Students may benefit from a quick refresher on how to create a Firebase project in the Firebase console, and how to initialize it in their project directory. Refer to Part 2 of the <a href="/day7/day7.md">day 7 lesson </a>for a stepped solution on how to create a Firebase project and set up a Realtime Database in the Firebase console. Reference the <a href="/day8/day8.md">day 8 lesson</a> for a stepped guide on how to initialize Firebase in a project directory.
 
+## Push to Github
+Encourage students to backup their work by pushing to Github. The steps for a single user Git/Github workflow can be found in the day 5 lesson guide. Ultimately, students will use Git and Github to collaborate on their final project, so it is a good idea to have them start to build their comfort with these tools in advance.
+
 ## Notes on Friday
 
 Fridays, especially the first and second Fridays of the course, are intentionally designed with no new content. These "flex days" are critical for student success - the extra time spent without the addition of new material allows them to deepen their understanding by shifting from cognitive to autonomous performance. 

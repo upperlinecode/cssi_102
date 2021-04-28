@@ -27,3 +27,7 @@ Ask students not just what they want to build, but what problems they want to so
 Depending on how students have done with Cloud Shell, Firebase, and Git so far, some students may be ready to try collaborating via Git branches, but others may be better off having front-end team members work in Glitch, and having back-end team members work in Cloud Shell, with designated times at the end of each working period to talk about and reintegrate their work. 
 
 Whatever workflow you decide is best for your students, be ready for them to get stuck and frustrated, and remind them that this is about the long-haul over an entire week, not just about what we can accomplish in a single day. 
+
+## Mock-Up Discussion
+
+Spend a few moments discussing mockups with students and how to design them. There are multiple online resources that students can use to assist in the process of preparing a mock-up. However, many of these are paid or may require a learning curve to use them effectively. The simplest and most straight-forward way to design a mockup is by hand. Walk students through how you would create a visual mockup of a project that you want to build. Discuss the importance of keeping the user's journey through the app in mind, from the app's entry point to the user's endpoint or destination.

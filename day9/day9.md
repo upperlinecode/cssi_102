@@ -28,7 +28,7 @@ level: core
 
 ## What We're Building
 
-Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database. Today's lesson is intentionally short. Use the remaining time to review any concepts from the last week that students might have struggled with, or that feels important to reinforce as students prepare to enter project mode tomorrow. 
+We'll continue building out our Secret Messaging App, with a focus on adding the ability for users to interact with the app by generating their own data. Today we will use the Firebase API to write to our realtime database. We can use the Firebase console as the source of truth for these types of operations. From there we can see any changes we make to our realtime database. Today's lesson is intentionally short. Use the remaining time to review any concepts from the past week that students might have struggled with, or that feels important to reinforce as students prepare to enter project mode tomorrow. 
 
 ## Starting Code
 
@@ -49,6 +49,7 @@ const submitMessage = () => {
 3. When students realize that the `console.log()` statement prints nothing, walk them through the steps of confirming that the Javascript file is linked to the `index.html` header. Guide them to the realization that the "Send Message" button isn't triggering any functionality. Explain event handlers and how they allow us to add interactivity and logic to our currently static site.
 
 4. Add a click handler to the "Send Message" button. Then test the `submitMessage()` function again.
+    - Name for students that so far we've used `document.querySelector()` and `.addEventListener('click')` to connect specific JavaScript functions to certain HTML elements and user events. While we could certainly do something similar here, we can also achieve that same thing in one step with an `onclick` attribute. This isn't as versatile as `.addEventListener()` and won't work perfectly in all situations, but in this case, it will achieve the same result. Ask students which syntax they prefer, and if they indicate a preference for the `.addEventListener()` method, then reassure them that they can refactor this code later if they like. 
 ```html
 <button class="button is-block is-fullwidth is-primary is-medium is-rounded" onclick="submitMessage()">
   Send Message
@@ -80,7 +81,12 @@ const submitMessage = () => {
 
 The finished code for today's code along can be found in the `day9_final` folder.
 
+## Push to Github
+Encourage students to backup their work by pushing to Github. The steps for a single user Git/Github workflow can be found in the day 5 lesson guide. Ultimately, students will use Git and Github to collaborate on their final project, so it is a good idea to have them start to build their comfort with these tools in advance.
+
 ## Extensions for Independent Practice
+
+NOTE: This day is the culmination of several days of work, so consider looking back at unfinished extensions from prior days to round out this list.
 
 ### Mild
 
@@ -93,4 +99,4 @@ The finished code for today's code along can be found in the `day9_final` folder
 
 ### Spicy
 
-- Write logic to randomly generate a unique key. Use this to identify each data node, instead of the automatically generated Firebase key. 
+- EXTRA SPICY: Right now, our application stores our "password" right there in the firebase console where we, the owners of the app, can see it. We're not respecting the privacy of our users very much. One way to fix that is to **[hash](https://youtu.be/cczlpiiu42M)** the password (convert it to something else) before we store it. There are lots of ways to do that, but the documentation in the [jsHashes](https://github.com/h2non/jshashes) library is pretty good, and it may be all you need. Try to hash the password that a user enters before you store it, and also hash the password before using it to retrieve stored records. 

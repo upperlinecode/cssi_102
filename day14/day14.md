@@ -9,7 +9,7 @@ subunit: firebase
 level: core
 ---
 
-# Git and Github Collaboration
+# Git and GiHub Collaboration
 
 1. [Objectives](#objectives)
 2. [What We're Building](#what-were-building)
@@ -28,11 +28,11 @@ level: core
 
 ## What We're Building
 
-Students will be manipulating a single README.md file to learn the basics of Git and Github.
+Students will be manipulating a single README.md file to learn the basics of Git and GitHub.
 
 ## Starting Code
 
-The purpose of this lesson is to build repository to demonstrate Git and Github workflows. There is no starter or final code. Students may have already used Git to back up their day 5 and/or day 10 projects. Acknowledge this, and let them know that some of today may be a refresher, but that they will also be learning how to use Git and Github to collaborate with their classmates.
+The purpose of this lesson is to build repository to demonstrate Git and GitHub workflows. There is no starter or final code. Students may have already used Git to back up their day 5 and/or day 10 projects. Acknowledge this, and let them know that some of today may be a refresher, but that they will also be learning how to use Git and GitHub to collaborate with their classmates.
 
 ## Stepped Solution
 
@@ -46,9 +46,9 @@ Depending on how you've distributed code to students up until this point, it's p
 
 1.  Spend a few minutes explaining distributed version control to students. Make sure they have a basic grasp of the concept before moving on. 
 
-2. This lesson will dive into Git and Github, but give students a primer by discussing the relationship between the two, and the advantages that they offer developers. 
+2. This lesson will dive into Git and GitHub, but give students a primer by discussing the relationship between the two, and the advantages that they offer developers. 
 
-3. Walk students through the steps of creating a new remote repository in Github.
+3. Walk students through the steps of creating a new remote repository in GitHub.
 
 4. Pause to make the distinction between remote and local repositories. Explain that cloning a repo will copy both its contents as well as its Git records.
 
@@ -92,11 +92,11 @@ page - the page will still be blank! GitHub doesn't have any knowledge of the mo
 
 16. Since the local repository was cloned from the remote one, the local repo is aware of the remote. Ask students to confirm this by typing `git remote show origin`. 
 
-17. Since the remote is already set up, all that remains to be done is to push our changes to the remote Github repository. First we'll add this line to rename our default branch from "master" to "main". Remind students that Github recently updated the default name of the primary branch to be more inclusive. Students can change the name of the main branch with this line of code:
+17. Since the remote is already set up, all that remains to be done is to push our changes to the remote Github repository. First we'll add this line to rename our default branch from "master" to "main". Remind students that GitHub recently updated the default name of the primary branch to be more inclusive. Students can change the name of the main branch with this line of code:
 ```bash
 git branch -M main
 ```
-We'll want to sync our remote Github repository to our local directory with this line:
+We'll want to sync our remote GitHub repository to our local directory with this line:
 ```bash
 git remote add origin <remote url>
 ```
@@ -155,9 +155,9 @@ different than the remote `main` branch.
 
 35. Step through the workflow to add, commit, and push local changes to the remote repository. 
 
-36. Navigate to Github to create a new pull request. GitHub can't automatically merge the two because there are conflicts. They will have to be fixed manually via GitHub's editor. Click on "Resolve conflicts" to continue.
+36. Navigate to GitHub to create a new pull request. GitHub can't automatically merge the two because there are conflicts. They will have to be fixed manually via GitHub's editor. Click on "Resolve conflicts" to continue.
 
-37. Github will show two labeled versions - one from the current branch, `rewrite-about`, and the other from `main`. Git needs more direction to determine how to proceed, so the file has to be manually edited. Go ahead and edit it to resolve the conflicts.
+37. GitHub will show two labeled versions - one from the current branch, `rewrite-about`, and the other from `main`. Git needs more direction to determine how to proceed, so the file has to be manually edited. Go ahead and edit it to resolve the conflicts.
 
 38. Click on "Mark as resolved" and then "Commit merge". This will create a new commit with the resolved changes. Once completed, merge the pull request as normal.
 

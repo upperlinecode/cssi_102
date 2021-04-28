@@ -34,15 +34,21 @@ This mini-project sprint that allows them to brainstorm ideas and then try to im
 
 That said, if it has become apparent that a specific concept proved more of a stumbling block than was anticipated, that concept is critical to know moving forward,  and a large subset of students are experiencing difficulty with that topic, then **if an instructor wants to offer a review session for that subset of students which covers these topics in a little more detail and formality, the team should try to adjust to make that happen.**
 
-## OPTIONAL: Pushing Projects to Github
+## OPTIONAL: Bulma Templates
 
-Students will be using Git Github later in the course to collaborate on their final project. To begin familiarizing them with Git and version control, it is a good idea to begin encouraging them to use it to back up their work. Encourage them to follow this workflow whenever the want to store their work, but particularly on project days. This course will examine GitHub workflows on day 14 (the last day before final projects), but that day will go much more smoothly if students have had some prior exposure. If you do not have time to introduce Git today, please consider finding another to do so - this can work on any day when students have created work they are proud of.
+Some students may be really excited to build out some websites with Bulma components straight from the source documentation or even from scratch, but others may be feeling a little overwhelmed. If you have some students who have expressed some trepidation around building something from scratch, you might encourage them to start with a template. [This GitHub repo](https://bulmatemplates.github.io/bulma-templates/) and [Awesome Open Source](https://awesomeopensource.com/project/aldi/awesome-bulma-templates) both have a few great Bulma templates to start out with, and [HTML5 UP](https://html5up.net/) also has some really beautiful teampltes that are made entirely from vanilla HTML and CSS - some use JavaScript though, so be careful about assuming these will be easy for students.
+
+In general, students take to the concept of templates pretty easily, since all the code-alongs we've done so far have been more or less examples of "templates" which have a chunk of starter code that serve as a jumping off point for creativity. They'll likely have questions about how to customize them, so be prepared to troubleshoot. 
+
+## OPTIONAL: Pushing Projects to GitHub
+
+Students will be using Git and GitHub later in the course to collaborate on their final project. To begin familiarizing them with Git and version control, it is a good idea to begin encouraging them to use it to back up their work. Encourage them to follow this workflow whenever the want to store their work, but particularly on project days. This course will examine GitHub workflows on day 14 (the last day before final projects), but that day will go much more smoothly if students have had some prior exposure. If you do not have time to introduce Git today, please consider finding another to do so - this can work on any day when students have created work they are proud of.
 
 1. Students should log into their Github account. If they don't have one yet, give them a few moments to register an account.
 
-2. From their Github profile, they should click the "Repositories" tab, then "New".
+2. From their GitHub profile, they should click the "Repositories" tab, then "New".
 
-3. Give students a moment to step through naming and creating a repository. Since this workflow is going to commit an EXISTING project, it's important that the "Intialize repository with a Readme" box is **deselected** (otherwise our push will be refused later). Once they've created their repository, Github will list the steps to initialize this Github project in their local repository. We'll go through those steps in detail below.
+3. Give students a moment to step through naming and creating a repository. Since this workflow is going to commit an EXISTING project, it's important that the "Intialize repository with a Readme" box is **deselected** (otherwise our push will be refused later). Once they've created their repository, GitHub will list the steps to initialize this GitHub project in their local repository. We'll go through those steps in detail below.
 
 4. In the command line, students should initialize a Git repository (or repo) for this project. Initializing a Git repo creates a `.git` file in the project. Though the `.git` file is typically hidden from us, unless we type a special `ls` command to view it, students should be aware that it is there, and it contains all of the information about their repository's history, making version control possible. First they'll want to make sure they are in their project directory, then type `git init`.
     * Please note that if students are working in Glitch, the command line / terminal can be accessed by clicking the "tools" button. 
@@ -52,21 +58,31 @@ Students will be using Git Github later in the course to collaborate on their fi
 
 6. Though Git is aware of thes files, it doesn't yet know to keep track of them and save changes when they occur. Saving in Git is a three step process, and much more intentional than the "command + S" students might be familiar with to save in Google Docs or Cloud Shell. Pause and ask students why they think a more tedious process where you have to indicate WHICH files to save, NAME that save, and then say WHERE to save them might be better when we're writing code?
 
-7. The first step in publishing changes is adding all of our files to a local staging area. Though Git is aware of thes files, it doesn't yet know to keep track of them. We must explicitly tell Git to track the files. As students are working locally they can track their incremental progress by using `git add <filename>` to store the changes for an eventual commit. They can replace `<filename>` with `.` to add all of the files. 
+   If you like, we recommend using an analogy with packaging boxes to move (explored further in the following steps) to help students remember each of the 3 steps. Introduce the analogy here, if using.
+
+7. The first step in publishing changes is adding all of our files to a local staging area. Though Git is aware of thes files, it doesn't yet know to keep track of them. We must explicitly tell Git to track the files. In the analogy, this is where you choose which things to put in a packing box. Note that, like moving, it is possible to put an assortment of things into the same box, but it will help you when you go to unpack if you keep related things together (i.e., files related to a particular update). 
+
+   As students are working locally they can track their incremental progress by using `git add <filename>` to store the changes for an eventual commit. They can replace `<filename>` with `.` to add all of the files. 
 Typing `git status` again will update them with which files have now been staged for commit.
 
-8. When students are happy with their changes and would like to capture them and save them, they can commit them.  Encourage students to think of committing to Git as creating snapshots in the chronology of a Git project. These snapshots capture some milestone or meaningful change in the project. Have students enter the command `git commit -m <message>` where `<message>` is a brief summary of the changes they've made to their project. Have students type `git status` again. They should now see that their working tree is clean, all changes they've made locally have been tracked and saved. 
+8. When students are happy with their changes and would like to capture them and save them, they can commit them.  Encourage students to think of committing to Git as creating snapshots in the chronology of a Git project. These snapshots capture some milestone or meaningful change in the project. In the analogy, this is where you would tape up the box and label it with what's inside. Note that having a short but *descriptive* message is best here: putting "things" on your packing box would not be helpful when you're unpacking, and putting a generic message like "bug fixes" will not help you if you're trying to go back and find a previous code change.
+ 
+   Have students enter the command `git commit -m <message>` where `<message>` is a brief summary of the changes they've made to their project. Have students type `git status` again. They should now see that their working tree is clean, all changes they've made locally have been tracked and saved.
+   
+9. Take a moment to demonstrate to students what will happen if they forget the `-m` and message part of the commit. This opens up vim, which can be very confusing for students. Very briefly mention that this is a built-in editor, and that getting out of it is one of the [most viewed questions on Stack Overflow](https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/), so they are not alone!
 
-9. In Github, the default branch has historically been called "master". Recently, in an effort to be more inclusive, Github has updated it's language to call the primary branch, or trunk, "main". Have students type this line in the terminal, to rename the default branch from "master" to "main".
+10. They have now saved their changes but only locally. To make their remote repository aware of the updates they've made locally, they must push these changes to their remote repository on GitHub. In the analogy, this is the part where they send the packaged boxes to their destination. Note that, like in moving, you can push many commits (send many boxes) at once. However, with git it is totally sensible to only send one commit at a time (no need to save on gas!). 
+
+11. In GitHub, the default branch has historically been called "master". Recently, in an effort to be more inclusive, GitHub has updated it's language to call the primary branch, or trunk, "main". Have students type `git branch` to see what their main branch is called. If any student's main branch is called "master", have them type this line in the terminal, to rename the default branch from "master" to "main".
 ```bash
 git branch -M main
 ```
 
-10. They have now saved their changes but only locally. In order to sync their local repository, with their remote repository they should add a remote origin with this line of code:
+12. They have now saved their changes but only locally. In order to sync their local repository, with their remote repository they should add a remote origin with this line of code:
 ```bash
 git remote add origin <remote url>
 ```
 
-11. To make their remote repository aware of the updates they've made locally, they must push these changes to their remote repository on Github. The command `git push origin main` will send these local changes to the remote repository hosted on Github. Have students refresh their Github repository to verify that their changes have been synced to their remote repository.
+13. To make their remote repository aware of the updates they've made locally, they must push these changes to their remote repository on GitHub. The command `git push origin main` will send these local changes to the remote repository hosted on GitHub. Have students refresh their GitHub repository to verify that their changes have been synced to their remote repository.
 
 

@@ -43,12 +43,11 @@ Starter code can be found in the `day8_starter` directory - moving forward, sinc
 * Select "Also set up Firebase hosting".
 * Click "Register App". Step through the rest of the set up, and click "Continue to console".
 
-2. There are multiple ways to initialize Firebase in a project directory. One of the simplest ways to do this is through hosted URLs that we can plug into our application. Since students have set up hosting, these urls are available to use. Have students load up the necessary Firebase libraries by adding this code to the head of their `index.html` file:
+2. There are multiple ways to initialize Firebase in a project directory. One of the simplest ways to do this is through hosted URLs that we can plug into our application. Since students have set up hosting, these urls are available to use. For this project only need to include the Realtime Database, and emulator libraries in order to use these tools. Have students load up the necessary Firebase libraries by adding this code to the head of their `index.html` file:
 ```html
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script defer src="/__/firebase/8.3.1/firebase-app.js"></script>
 <!-- include only the Firebase features as you need -->
-<script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
 <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
 <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 ```
@@ -85,7 +84,8 @@ const getMessages = () => {
 
 8. Have students add a `console.log()` to their `getMessages()` function to confirm that they recieved data. Emphasize the value of printing to the console in testing out code as you build. Encourage students to be generous with adding `console.log()` statements as they continue to write the logic for their app. 
 
-9. Use the DOM to capture the value of the input field. Use a `for...in` loop to iterate over the returned JSON, and search for the message that match the secret passcode. Remind students that they may have used iteration with arrarys with `for` loops, and that `for...in` loops are similar, but meant to be used with objects.
+9. Use the DOM to capture the value of the input field. Use a `for...in` loop to iterate over the returned JSON, and search for the message that match the secret passcode. Remind students that they may have used iteration with arrarys with `for` loops, and that `for...in` loops are similar, but meant to be used with objects. 
+It's worth noting that there are a few different options available to us to iterate over this object. Google Style Guide recommends using a `for...of` loop. Similar to a `for...in` loop, a `for...of` loop allows us to loop through iterable objects like arrays and strings. If we wanted to use a `for...of` loop in this instance we would have to iterate over the object's keys using the `Object.keys(<obj>)` method. For conciseness and simplicity, we will stick with a `for...of` loop here. It's a bit more intuitive for beginners and translates more directly to Python and other common programming languages. Still, let student's know that it is only one of many ways to iterate over an object, and encourage them to explore other methods on their own.
 ```js
 const findMessage = (messages) => {
     const passcodeAttempt = document.querySelector('#passcode').value;
@@ -98,7 +98,7 @@ const findMessage = (messages) => {
 }
 ```
 
-10. Add functionality to render the message as HTML in our `viewMessage.html` file.
+10. Add functionality to render the message as HTML in our `viewMessages.html` file.
 ```js
 const renderMessageAsHtml = (message) => {
     // Hide Input Form
@@ -133,6 +133,9 @@ const renderMessageAsHtml = (message) => {
 ## Finished Code
 
 The finished code for today's code along can be found in the `day8_final` folder.
+
+## Push to Github
+Encourage students to backup their work by pushing to Github. The steps for a single user Git/Github workflow can be found in the day 5 lesson guide. Ultimately, students will use Git and Github to collaborate on their final project, so it is a good idea to have them start to build their comfort with these tools in advance.
 
 ## Extensions for Independent Practice
 
