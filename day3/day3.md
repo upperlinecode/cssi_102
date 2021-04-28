@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 3 - JavaScript Zoo
+pos: 2103
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # JavaScript Petting Zoo
 
 1. [Objectives](#objectives)

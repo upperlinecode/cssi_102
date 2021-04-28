@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 2 - Top 10 List
+pos: 2102
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Top 10 List
 
 1. [Objectives](#objectives)

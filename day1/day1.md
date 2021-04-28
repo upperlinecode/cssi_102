@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 1 - Restaurant Page
+pos: 2101
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Restaurant Page
 
 1. [Objectives](#objectives)

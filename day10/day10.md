@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 10 - Mini-project 2
+pos: 2110
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Dynamic Web App with Firebase Realtime Database
 
 ## Objectives

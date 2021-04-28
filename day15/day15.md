@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 15 - Project Launch
+pos: 2115
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Project Launch!
 
 ## Objectives

@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 12 - Reading Data and Rendering HTML
+pos: 2112
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Firebase Realtime Database: Reading Data and Rendering HTML
 
 1. [Objectives](#objectives)

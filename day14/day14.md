@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 14 - Git & GitHub Collaboration
+pos: 2114
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Git and Github Collaboration
 
 1. [Objectives](#objectives)
