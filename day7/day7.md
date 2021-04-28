@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 7 - Intro to Cloud Shell + Firebase
+pos: 2107
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Intro to Cloud Shell + Firebase
 
 1. [Objectives](#objectives)

@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 6 - GifFinder
+pos: 2106
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # GifFinder
 
 1. [Objectives](#objectives)

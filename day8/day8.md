@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 8 - Realtime Database Part 1
+pos: 2108
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Intro to Realtime Database Part. 1
 
 1. [Objectives](#objectives)

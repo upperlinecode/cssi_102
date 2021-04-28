@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 5 - Mini-project 1
+pos: 2105
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Mini-Project 1: HTML site (With Bulma and JavaScript)
 
 ## Objectives

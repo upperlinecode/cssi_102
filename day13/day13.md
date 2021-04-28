@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 13 - Editing and Deleting Data
+pos: 2113
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Firebase Realtime Database: Editing and Deleting Data
 
 1. [Objectives](#objectives)

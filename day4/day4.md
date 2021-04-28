@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 4 - Language Grid Guessing Game
+pos: 2104
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Language Grid Guessing Game
 
 1. [Objectives](#objectives)

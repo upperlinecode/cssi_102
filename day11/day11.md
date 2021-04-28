@@ -1,3 +1,14 @@
+---
+layout: lesson
+title: Day 11 - Firebase Authentication
+pos: 2111
+published: true
+instructor: true
+type: lesson
+subunit: firebase
+level: core
+---
+
 # Firebase Realtime Database: Authenticating Google Users and Writing to a Database
 
 1. [Objectives](#objectives)
