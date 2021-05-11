@@ -9,7 +9,7 @@ subunit: firebase
 level: core
 ---
 
-# Git and GiHub Collaboration
+# Git and GitHub Collaboration
 
 1. [Objectives](#objectives)
 2. [What We're Building](#what-were-building)
